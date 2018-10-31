@@ -1,0 +1,266 @@
+page{
+    background: #f2f2f2;
+}
+button::after{
+    border: none;
+}
+.menu_box{
+ display: flex;
+ height: 80rpx;
+ border-bottom:1rpx solid #ddd; 
+ background: #fff;
+}
+.menu1,.menu2{
+    flex: 1;
+    font-size:35rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color: #9d9d9d;
+}
+.borders{
+    color: #f00;
+    position: relative;
+    font-size:32rpx;
+}
+.borders::after{
+  position: absolute;
+  content: "";
+  width: 2em;
+  height: 5rpx;
+  background:  #f00;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+.tab1{
+  padding: 20rpx;
+  background: #f2f2f2;
+}
+.goodsList{
+    background: #fff;
+    margin-bottom:30rpx; 
+    /* height: 360rpx; */
+    border-radius:10rpx; 
+    overflow: hidden;
+}
+.goods_bianhao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 20rpx;
+    margin:20rpx  auto;
+    font-size: 24rpx;
+}
+.goods_bianhaoNum{
+    text-indent: 1em;
+    position: relative;
+    width: 400rpx;
+    flex-shrink: 0;
+}
+.goods_bianhaoNum::after{
+    position: absolute;
+    width: 10rpx;
+    height: 10rpx;
+    content: "";
+    background: #727272;
+    border-radius:50%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto; 
+}
+navigator{
+    width: 100%;
+    height: 100%;
+}
+.goods_schedule{
+    width: 250rpx;
+    flex-shrink:0; 
+    text-align: right;
+}
+.goods_schedule text{
+    color: #f00;
+
+}
+.goods_countm{
+    color: #9c9c9c;
+}
+.goods_details{
+    height: 215rpx;
+    border-bottom:1rpx solid #dadada;
+    padding:0 20rpx;
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+    text-align:center;
+}
+.goods_list{
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+}
+.goods_img{
+    width: 180rpx;
+    height: 180rpx;
+    border-radius:10rpx; 
+    text-align: center;
+    margin-right: 15rpx;
+    flex-shrink:0; 
+    overflow: hidden;
+}
+.goods_move{
+    width: 105rpx;
+    background: #fff;
+    height:180rpx;
+    flex-shrink:0;
+    line-height: 180rpx;
+    text-align: right;
+    font-size: 50rpx;
+    color: #3B8BFE;
+}
+.goods_move .iconfont{
+    font-size: 50rpx;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.goods_img image{
+    max-height:100%; 
+    max-width: 100%;
+}
+.goods_title{
+   font-size:28rpx;
+    width:415rpx;
+    color:#9d9d9d;
+}
+.goods_operate,.goods_btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.goods_operate{
+    padding:0 20rpx;
+    font-size: 30rpx;
+    height: 75rpx;
+}
+.btn{
+    line-height: 45rpx;
+    border: 1rpx solid ;
+    padding:10rpx 20rpx;  
+    margin:0 10rpx;
+    flex-shrink: 0;
+}
+.btn:last-child{
+    margin-right: 0;
+}
+.green{
+    background: #3B8BFE;
+    color: #fff;
+    border: none;
+    font-size: 24rpx;
+    line-height: 45rpx;
+    border-radius:5rpx; 
+    padding:5rpx 20rpx;  
+}
+.red{
+    background: #f00;
+    color: #fff;
+    border: none;
+    font-size: 24rpx;
+    line-height: 45rpx;
+    border-radius:5rpx; 
+    padding:5rpx 20rpx;  
+}
+.goods_payment{
+    color: #959595;
+    font-size: 24rpx;
+}
+.tips{
+    text-align: center;
+    font-size: 24rpx;
+    color: #9d9d9d;
+    position: relative;
+    margin: 30rpx auto;
+    height:30rpx;
+    line-height: 30rpx;
+}
+.tips::after{
+    position: absolute;
+    right: 120rpx;
+    width: 5em;
+    content: "";
+    height: 1rpx;
+    background: #9d9d9d;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.tips::before{
+    position: absolute;
+    left:120rpx;
+    width: 5em;
+    content: "";
+    height: 1rpx;
+    background: #9d9d9d;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.btn_share{
+    background: #fff;
+    color: #fd4a46;
+    border: 1rpx solid #fd4a46;
+    font-size: 25rpx;
+    line-height: 45rpx;
+    padding:0rpx 20rpx;  
+    margin-right:20rpx;
+    box-sizing:border-box; 
+}
+
+.showModal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, .8);
+}
+.Modalf{
+    width: 400rpx;
+    height: 300rpx;
+    background: #fff;
+    text-align: center;
+    font-size: 30rpx;
+    border-radius:10rpx; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.Modalf view{
+    font-size:32rpx;
+    margin-top:20rpx;
+    padding:0 30rpx;
+    line-height:1.6;
+    box-sizing:border-box;
+}
+.Modalf button{
+    height:60rpx;
+    background:#3c8bff;
+    width:300rpx;
+    margin:50rpx auto 0;
+    color:#fff;
+    line-height:60rpx;
+    font-size:30rpx;
+}

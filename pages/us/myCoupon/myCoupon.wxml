@@ -1,0 +1,82 @@
+<view class="menu_box">
+    <text class='menu {{menuTapCurrent=="0"?"borders":""}}' data-current="0" catchtap="menuTap">全部</text>
+    <text class='menu {{menuTapCurrent=="1"?"borders":""}}' data-current="1" catchtap="menuTap">待使用</text>
+    <text class='menu {{menuTapCurrent=="2"?"borders":""}}' data-current="2" catchtap="menuTap">已过期</text>
+</view>
+<view class="tab">
+    <view class='coupon_list' wx:for="{{couponlist}}" wx:key="">
+        <image mode='aspectFit' src='{{item.img}}'></image>
+        <view class='left_box'>
+            <view class='conten_box'>
+                <view class='conten_title' wx:if="{{item.c_type==1}}">满减优惠卷</view>
+                <view class='conten_title' wx:else>预付现金券</view>
+                <view class='use_date' wx:if="{{item.times !=null}}">{{item.times}}前使用使用</view>
+            </view>
+        </view>
+        <view class='rigth_box'>
+            <view class='conten_box'>
+                <view class='worth'>
+                    <text class='fuhao'>￥</text>
+                    <text class='worth_money'>{{item.money}}</text>
+                </view>
+                <view class='arrive'>满{{item.moneys}}使用</view>
+                <view class='arrivetext' wx:if="{{item.type==1}}">待使用</view>
+                <view class='arrivetext' wx:elif="{{item.type==2}}">已使用</view>
+                <view class='arrivetext' wx:else>已过期</view>
+            </view>
+        </view>
+
+    </view>
+</view>
+<!-- <view class="tab" hidden="{{menuTapCurrent!='1'}}">
+    <view class='coupon_list' wx:for="{{couponlist}}" wx:key="" wx:if="{{item.state==1}}">
+        <image mode='aspectFit' src='http://img.hb.aicdn.com/4aed37d2049e09d5f1c4c1d37a57d8aa223b58b727ac-fmcHJs_fw658' wx:if="{{item.state==1 && item.coupon==1}}"></image>
+        <image mode='aspectFit' src='http://img.hb.aicdn.com/c86d8345bb1b298fc4d567af7f00a48933fcb5fd5d2d3-bYjVRX_fw658' wx:elif="{{item.state==1 && item.coupon==0}}"></image>
+        <view class='left_box'>
+            <view class='conten_box'>
+                <view class='conten_title' wx:if="{{item.coupon==1}}">满减优惠卷</view>
+                <view class='conten_title' wx:elif="{{item.coupon==0}}">满减现金卷</view>
+                <view class='use_date'>{{item.initial}}至{{item.end}}使用</view>
+            </view>
+        </view>
+        <view class='rigth_box'>
+            <view class='conten_box'>
+                <view class='worth'>
+                    <text class='fuhao'>￥</text>
+                    <text class='worth_money'>{{item.worth}}</text>
+                </view>
+                <view class='arrive'>满{{item.arrive}}使用</view>
+                <view class='arrivetext' wx:if="{{item.state==1}}">待使用</view>
+                <view class='arrivetext' wx:else>已过期</view>
+            </view>
+        </view>
+
+    </view>
+</view>
+<view class="tab" hidden="{{menuTapCurrent!='2'}}">
+    <view class='coupon_list' wx:for="{{couponlist}}" wx:key="" wx:if="{{item.state==0}}">
+        <image mode='aspectFit' src='http://img.hb.aicdn.com/8960d73f8da30fcd5ddaa58bfb506382593a4c7d25552-9vLJ6e_fw658' wx:if="{{item.state==0 && item.coupon==0}}"></image>
+        <image mode='aspectFit' src='http://img.hb.aicdn.com/b0ddbd78baf02fdaeaebd654a049d06562f39ee623e1-0inFoc_fw658' wx:elif="{{item.state==0 && item.coupon==1}}"></image>
+        <view class='left_box'>
+            <view class='conten_box'>
+                <view class='conten_title' wx:if="{{item.coupon==1}}">满减优惠卷</view>
+                <view class='conten_title' wx:elif="{{item.coupon==0}}">满减现金卷</view>
+                <view class='use_date'>{{item.initial}}至{{item.end}}使用</view>
+            </view>
+        </view>
+        <view class='rigth_box'>
+            <view class='conten_box'>
+                <view class='worth'>
+                    <text class='fuhao'>￥</text>
+                    <text class='worth_money'>{{item.worth}}</text>
+                </view>
+                <view class='arrive'>满{{item.arrive}}使用</view>
+                <view class='arrivetext' wx:if="{{item.state==1}}">待使用</view>
+                <view class='arrivetext' wx:else>已过期</view>
+            </view>
+        </view>
+
+    </view>
+</view> -->
+
+<view class='tips'>{{title}}</view>

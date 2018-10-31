@@ -1,0 +1,126 @@
+image{
+    width: 100%;
+    height: 100%;
+}
+.comment-box{
+    padding:20rpx 0;
+    border-bottom:1rpx solid #666;
+    margin-bottom:20rpx;
+}
+.comment-box:last-child{
+    border: none;
+}
+.comment-box-list{
+    width:710rpx;
+    margin:0 auto;
+}
+.goods-box{
+    display: flex;
+    align-items: center;
+    margin:20rpx auto;
+}
+.goods-pic{
+    width:80rpx;
+    height:80rpx;
+    flex-shrink:0;
+}
+.goods-name{
+    font-size:32rpx;
+    margin-left:20rpx;
+    width:500rpx;
+    display:-webkit-box; 
+    overflow:hidden; 
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+}
+.comment-text{
+    width:710rpx;
+    height:230rpx;
+    border:1rpx solid #d9d9d9;
+    padding:15rpx 25rpx;
+    box-sizing:border-box;
+    margin-bottom:20rpx;
+}
+.comment-text textarea{
+    width: 100%;
+    height: 100%;
+    font-size: 28rpx;
+}
+.textarea-placeholder{
+    font-size: 28rpx;
+}
+.comment-pictures{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:20rpx 0;
+}
+.comment-pictures-box{
+    width: 200rpx;
+    height: 200rpx;
+    flex-shrink: 0;
+    margin-right:35rpx; 
+    margin-bottom:35rpx;
+    text-align:center;
+    line-height:200rpx;
+    position: relative;
+}
+.bg{
+    background: #f2f2f2;
+}
+.comment-pictures-box .icon-jia{
+    font-size:160rpx;
+    color:#9d9d9d;
+}
+.del{
+    position: absolute;
+    width: 40rpx;
+    height: 40rpx;
+    background: #FF4A48;
+    top:-20rpx;
+    right:-20rpx;
+    border-radius:50%;
+    color:#fff;
+    line-height:40rpx;
+    text-align:center;
+}
+.del .icon-close{
+    font-size:28rpx;
+}
+.score-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom:20rpx;
+}
+.evIcon-box{
+    width:450rpx;
+    flex-shrink:0;
+    font-size:30rpx;
+    display:flex;
+    align-items:center;
+}
+.evlcon-lable{
+    margin-right:20rpx;
+}
+.evIcon-box .iconfont{
+    color:#ccc;
+    font-size:40rpx;
+    margin-right:5rpx;
+}
+.evIcon-box .on{
+    color: #ffc03a;
+}
+.subBtn-box{
+    width:170rpx;
+    flex-shrink: 0;
+}
+.subBtn-box button{
+    height:60rpx;
+    width:170rpx;
+    line-height:60rpx;
+    background:#3e8cff;
+    color:#fff;
+    border-radius:0;
+    font-size:28rpx;
+}

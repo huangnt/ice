@@ -1,0 +1,40 @@
+<view class="comment-box" wx:for="{{buyGoods}}" wx:for-item="buy" wx:for-index="idx" wx:key="">
+    <view class='comment-box-list'>
+        <view class='goods-box'>
+            <view class='goods-pic'>
+                <image mode='aspectFit' src='{{buy.img}}'></image>
+            </view>
+            <view class='goods-name'>{{buy.name}}</view>
+        </view>
+        <view class='comment-text'>
+            <textarea value="{{buy.commentText}}" placeholder='希望您给我们意见，以便我们提供更好的服务' show-confirm-bar="false" bindblur="textOut"  maxlength="9999" placeholder-class="textarea-placeholder" data-textareaNum='{{idx}}'></textarea>
+        </view>
+        <view class='comment-pictures'>
+            <view class='comment-pictures-box' wx:for="{{buy.beautyPat}}" wx:key="" >
+                <image mode='aspectFit' src="{{item.path}}" ></image>
+                <view class='del' bindtap='del' data-index='{{index}}' data-buy="{{idx}}"><text class='iconfont icon-close'></text></view>
+            </view>
+            <view class='comment-pictures-box bg' hidden='{{buy.beautyPat.length == 9}}' bindtap='uploadPictures' data-picture="{{idx}}">
+                <text class='iconfont icon-jia'></text>
+            </view>
+        </view>
+        <view class='score-box'>
+            <view class='evIcon-box'>
+                <text class='evlcon-lable'>商品评价:</text>
+                <text class="iconfont icon-xingxing {{buy.level>=1? 'on': ''}}" bindtap='scoresColor1' data-star="{{idx}}" data-level="1"></text>
+                <text class="iconfont icon-xingxing {{buy.level>=2? 'on': ''}}" bindtap='scoresColor1' data-star="{{idx}}" data-level="2"></text>
+                <text class="iconfont icon-xingxing {{buy.level>=3? 'on': ''}}" bindtap='scoresColor1' data-star="{{idx}}" data-level="3"></text>
+                <text class="iconfont icon-xingxing {{buy.level>=4? 'on': ''}}" bindtap='scoresColor1' data-star="{{idx}}" data-level="4"></text>
+                <text class="iconfont icon-xingxing {{buy.level>=5? 'on': ''}}" bindtap='scoresColor1' data-star="{{idx}}" data-level="5"></text>
+            </view>
+            <view class='subBtn-box'>
+                <button catchtap='subBtn' data-idx='{{idx}}'>提交</button>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="body-view">
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+</view>

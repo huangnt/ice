@@ -1,0 +1,87 @@
+<view class='pick_goodsBox' hidden='{{caseNum==1}}'>
+   <view class='consignee' wx:if="{{lists.a_id >0}}">
+        <view class='consigneeName'>
+            <view class='lableTitle'>收货人:</view>
+            <view class='name'>{{lists.a_name}}</view>
+        </view>
+        <view class='pho'>{{lists.a_tel}}</view>
+        <view class='jump_page' bindtap='jump_coladdress'>
+            <text class='bianji'>编辑</text>
+             <text class='iconfont icon-right1'></text>
+        </view>
+   </view>
+    <view  class='consignee' wx:else>
+        <view class='consigneeNames'>
+            <view>亲，您还没添加地址！</view>
+        </view>
+        <view class='jump_page' bindtap='jump_coladdress'>
+            <text class='bianji'>新增</text>
+             <text class='iconfont icon-right1'></text>
+        </view>
+   </view>
+   <view class='address' wx:if="{{lists.a_id >0}}">
+        <view class='addressTitle'>收货地址:</view>
+        <view class='addressDet'>{{lists.a_address_xq}}</view>
+   </view>
+</view>
+
+<view class='pick_goodsBox'>
+    <view class='Title blue'>配送时间</view>
+    <view class='select_give'>
+        <view class='give_box' wx:for="{{give}}" wx:key="" >
+            <view class='give_icon'>
+                <icon class='select' type="success" size="18" color='#3C8CFF' wx:if="{{item.selected==true}}" data-index="{{index}}" catchtap='select_give'></icon>
+                <icon class='select' type="circle" size="18"  wx:else="{{item.selected==false}}" data-index="{{index}}" catchtap='select_give'></icon>
+            </view>
+            <view class='give_text {{item.selected==true?"colortext":""}}'>{{item.day}}</view>
+        </view>
+    </view>
+</view>
+
+<view class='pick_goodsBoxone'>
+    <view class='Title purple'>订单信息</view>
+    <view class='order_box'>
+        <view class='order_list' wx:for="{{orderlist}}" wx:key="">
+            <view class='order_list_small'>
+              <view class='order_text'>{{item.title}}</view>
+              <text class='order_num'> ×{{item.num}}</text>
+              <text class='iconfont icon-jian-tianchong ' data-index='{{index}}' catchtap='remod_order'></text>
+            </view>
+            <view class='tips' wx:if="{{item.is_freight ==false && caseNum==2}}">
+              (该城市暂不配送)
+            </view>
+        </view>
+    </view>
+</view>
+<view class='pick_goodsBoxone' wx:if='{{caseNum==1}}'>
+    <view class='Title purple'>预支邮费</view>
+    <view class='order_box'>
+        <view class='order_postage'>
+            <text class='postage_title'>预支邮费：￥</text>
+            <text class='postage_momey'>{{lists.freight}}</text>
+        </view>
+        <view class='order_notes'>
+            <text class='note_title'>注：</text>
+            <text class='note_text'>请您先预付运费，收货人填写配送地址后，系统根据配送区域扣减实际产生的运费金额，剩余钱款将自动退回至您的支付账户中。（运费规则详询客服）</text>
+        </view>
+    </view>
+</view>
+<view class='pick_goodsBoxone' wx:if='{{caseNum==2}}'>
+    <view class='Title purple'>现付邮费</view>
+    <view class='order_box'>
+        <view class='order_postage'>
+            <text class='postage_title'>现付邮费：￥</text>
+            <text class='postage_momey'>{{lists.freight}}</text>
+        </view>
+    </view>
+</view>
+<view class='btn'>
+    <button class='atonce' catchtap='jump_pickupgoods'>{{caseNum==1?"提货赠送":"立即提货"}}</button>
+</view>
+
+<view class='showModal' wx:if="{{showModal==true}}">
+    <view class='Modalf'>
+        <view>请点击按钮选择要送的好友</view>
+        <button open-type="share"  catchtap='hiedModal'>赠送好友</button>
+    </view>
+</view>

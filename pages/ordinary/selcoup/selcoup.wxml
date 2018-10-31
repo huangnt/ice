@@ -1,0 +1,29 @@
+<view class='selcop_list'>
+    <view class='list'  wx:for="{{couponlist}}" wx:key="" wx:if="{{item.state==1 && item.coupon==1}}">
+        <view class='list_img' >
+            <image mode='aspectFit' src='http://img.hb.aicdn.com/4aed37d2049e09d5f1c4c1d37a57d8aa223b58b727ac-fmcHJs_fw658' wx:if="{{item.state==1 && item.coupon==1}}"></image>
+            <view class='left_box'>
+                <view class='conten_box'>
+                    <view class='conten_title' wx:if="{{item.coupon==1}}">满减优惠卷</view>
+                    <view class='conten_title' wx:elif="{{item.coupon==0}}">满减现金卷</view>
+                    <view class='use_date'>{{item.initial}}至{{item.end}}使用</view>
+                </view>
+            </view>
+            <view class='rigth_box'>
+                <view class='conten_box'>
+                    <view class='worth'>
+                        <text class='fuhao'>￥</text>
+                        <text class='worth_money'>{{item.worth}}</text>
+                    </view>
+                    <view class='arrive'>满{{item.arrive}}使用</view>
+                    <view class='arrivetext' wx:if="{{item.state==1}}">待使用</view>
+                    <view class='arrivetext' wx:else>已过期</view>
+                </view>
+            </view>
+        </view>
+        <view class='iconbox'>
+            <icon type='success' size="20" color="#3C8CFF" wx:if="{{item.select==true}}" catchtap='selecticon' data-index="{{index}}"></icon>
+            <icon type='success' size="20" color="#CCCCCC" wx:else  catchtap='selecticon' data-index="{{index}}"></icon>
+        </view>
+    </view>
+</view>

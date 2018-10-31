@@ -1,0 +1,69 @@
+page{
+    background: #F2F2F2;
+}
+form{
+    margin-top: 30rpx;
+    display: inline-block;
+    
+}
+.section{
+    width: 100%;
+    display: flex;
+    padding: 20rpx;
+    box-sizing: border-box;
+     font-size:35rpx;
+     color: #333;
+     border-bottom:1rpx solid #ccc; 
+     background: #fff;
+}
+.section:first-child{
+    padding-top: 55rpx;
+}
+.section input{
+    width:530rpx;
+    font-size:32rpx;
+}
+.section_name,.section_pho,.section_address,.allAddress{
+    font-size:35rpx;
+    color:#9d9d9d;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+.picker{
+    display: flex;
+}
+.btn-area{
+    position: fixed;
+    width: 710rpx;
+    bottom:150rpx;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+.btn-area button{
+    background: #3B8CFE;
+    color: #fff;
+    font-size:35rpx;
+    height: 80rpx;
+    line-height: 80rpx; 
+    border-radius:5rpx; 
+    
+}
+.selectmodify{
+    display: flex;
+    height:50rpx;
+    align-items: center;
+    margin-top:30rpx;
+    padding: 20rpx 20rpx; 
+    letter-spacing:5rpx;
+    justify-content: space-between;
+    background: #fff;
+}
+.iconselect{
+    line-height:0;
+}
+.icontext{
+    font-size: 30rpx;
+    color: #333;
+    margin-left:20rpx; 
+}

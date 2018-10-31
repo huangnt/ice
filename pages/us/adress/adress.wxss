@@ -1,0 +1,128 @@
+page{
+    background: #E9E9E9;
+}
+.address_list{
+    background: #fff;
+    margin-top:10rpx; 
+
+}
+.address_list:first-child{
+    margin-top:5rpx; 
+}
+.address_list:last-child{
+    border-bottom:none;
+}
+.list_top{
+    padding: 50rpx 20rpx 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1rpx dashed #d9d9d9;
+}
+.list_bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25rpx 20rpx;
+}
+.gray{
+    background: #ccc;
+    flex-shrink: 0; 
+     width: 23rpx;
+    height: 23rpx;
+    border-radius: 50%;
+    margin:10rpx 10rpx 0 0;
+}
+.address_name{
+    font-size:30rpx;
+    margin-bottom:20rpx;
+}
+.address_num{
+    background: -webkit-linear-gradient(top,#4E99EE,#1171FE);
+    box-shadow: 0 5rpx 20rpx #4E99EE;
+}
+.address_contact{
+    width: 420rpx;
+    flex-shrink: 0; 
+}
+.address_text{
+    color: #000;
+    font-size: 24rpx;
+    margin-bottom:25rpx;
+}
+.address_pho{
+    color: #000;
+    width: 260rpx;
+    font-size: 28rpx;
+    text-align: right;
+    flex-shrink: 0;
+}
+.address_pho text{
+    margin-right:20rpx; 
+}
+.default{
+    background: #3B8CFE;
+    color: #fff;
+    font-size: 25rpx;
+    height:35rpx;
+    padding:2rpx 20rpx;
+    border-radius:35rpx;
+    line-height:35rpx;
+}
+.kong{
+    background: #D0D0D0;
+    color: #fff;
+    font-size: 25rpx;
+    height:35rpx;
+    padding:2rpx 20rpx;
+    border-radius:35rpx;
+    line-height:35rpx;
+}
+.delAndmodify{
+    width: 260rpx;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    text-align: right;
+    color: #9d9d9d;
+    font-size:25rpx;
+}
+.del{
+    font-size:30rpx;
+    margin-top:10rpx;
+    width:115rpx;
+    height:40rpx;
+    /* border:1rpx solid #d9d9d9; */
+    text-align:center;
+    color: #000;
+    border-radius:5rpx; 
+}
+.del text{
+  font-size: 30rpx;
+}
+.tips{
+    text-align: center;
+    margin-top:30rpx;
+    color: #9d9d9d;
+    font-size: 30rpx; 
+}
+.addBtn{
+    width:100%;
+    height:95rpx;
+    margin:30rpx auto 0;
+}
+.addBtn button{
+    width:100%;
+    height:95rpx;
+    font-size: 30rpx;
+    line-height: 95rpx;
+    color: #fff;
+    background:#3B8CFE;
+    box-shadow: 0 0 20rpx #3b8cfe;
+}
+.btnfiex{
+    position: fixed;
+    bottom: 200rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

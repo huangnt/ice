@@ -1,0 +1,39 @@
+<view class='shopcar_box'>
+    <view class='goodsList' wx:for="{{goodsList}}" wx:key="" bindtap='jump_details' data-index="{{index}}">
+        <view class='goods_box'>
+            <view class='select_box'  catchtap='select_fun' data-index="{{index}}">
+                <icon type="success" size="20" color="#FE4847" wx:if="{{item.select==true}}" catchtap='select_fun' data-index="{{index}}"></icon>
+                <icon type="success" size="20" color="#CCCCCC" wx:else catchtap='select_fun' data-index="{{index}}"></icon>
+            </view>
+            <view class='goodsImg'>
+                <image src='{{item.img}}'></image>
+            </view>
+            <view class='goods_content'>
+                <view class='goods_name'>{{item.title}}</view>
+                <view class='goods_momey'>单价：￥{{item.cost_price}}</view>
+                 <view class='all_momey'>
+                    ￥<text> {{item.total}}</text>
+                    </view>
+                <view class='goods_fun'>
+                    <view class='addAndminus'>
+                        <text class='iconfont icon-jian' catchtap='minusCount' data-index="{{index}}"></text>
+                        <text class='goods_Num'>{{item.num}}</text>
+                        <text class='iconfont icon-add'  catchtap='addCount' data-index="{{index}}"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view id='footer_box'>
+    <view class='all_select'>
+         <icon type="success" size="18" color="#FE4847" wx:if="{{selectall==true}}" catchtap='selectAll' data-index="{{index}}"></icon>
+        <icon type="circle" size="18" catchtap='selectAll' wx:else data-index="{{index}}"></icon>
+        <view class='gooslistNum'>全选</view>
+    </view>
+    <view class='footer_btn'>
+        <view class='all_goodsListMomey'>总计: <text>￥{{totalPrice}}</text></view>
+        <button class='pay'  form-type='submit' catchtap='jump_pay'>付款</button>
+        <button class='launch' form-type='submit'  catchtap='jump_launch'>发起拼单</button>
+    </view>
+</view>

@@ -1,0 +1,149 @@
+page{
+    background: #f2f2f2;
+}
+button::after{
+    border: none;
+    border-radius:0; 
+}
+.frigbox{
+    margin-bottom:120rpx; 
+}
+.frigList{
+    margin: 15rpx auto 0;
+    height: 330rpx;
+    background: #fff;
+    
+}
+.goods_checkbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50rpx;
+    padding: 0 20rpx;
+    border-bottom:1rpx solid #dadada; 
+}
+.goodsSection{
+    height: 275rpx;
+    padding: 0 20rpx;
+    display: flex;
+    align-items: center; 
+}
+.frigGoodsImg{
+    height: 230rpx;
+    width: 230rpx;
+    margin-right:40rpx; 
+    flex-shrink: 0;
+}
+.frigGoodsImg image{
+    width: 100%;
+    height: 100%;
+}
+.fiigGoodsconten{
+    width: 440rpx;
+    height: 230rpx;
+    flex-shrink: 0;
+    position: relative;
+}
+.fiigGoodsName{
+    font-size: 30rpx;
+    display:-webkit-box; 
+    overflow:hidden;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    margin-top:30rpx;
+}
+
+.fiigGoodsStock{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28rpx;
+    color: #ff4949;
+    position: absolute;
+    width: 100%;
+    bottom: 50rpx;
+}
+.picktext{
+    font-size:26rpx;
+    color:#9d9d9d;
+    margin:20rpx auto 10rpx;
+}
+.pickGoodstext{
+    font-size: 30rpx;
+    color: #333;
+}
+.pickChoice{
+    width: 150rpx;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+}
+.pickChoice .iconfont{
+   font-size:45rpx;
+}
+.icon-add{
+    background:#eeeeee;
+    border-radius:50%;
+}
+
+.goodsNum{
+    width: 70rpx;
+    text-align: center;
+    font-size: 36rpx;
+    z-index:0;
+}
+
+.footer{
+    position: fixed;
+    width: 100%;
+    height: 110rpx;
+    background: #fff;
+    bottom: 0;
+  
+}
+.ccc{
+    height: 110rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0  20rpx;
+    box-sizing: border-box;
+    box-shadow:0 0 20rpx #ccc;
+}
+.total{
+    font-size:24rpx;
+    color:#9d9d9d;
+}
+.total text{
+    color: #FE125A;
+    font-size:36rpx;
+
+}
+.jiesuan{
+    display: flex;
+    justify-content: space-between;
+    width:350rpx;
+    height:70rpx;
+}
+.jiesuan view{
+    width: 170rpx;
+    height:70rpx;
+    
+}
+.jiesuan view button{
+    width:170rpx;
+    height:70rpx;
+    line-height:70rpx;
+    font-size:25rpx;
+    padding:0;
+    color:#fff;
+    border-radius:0;
+}
+.blue{
+    background: #3B8BFE;
+}
+.red{
+    background: #FE7B89;
+}

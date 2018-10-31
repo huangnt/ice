@@ -1,0 +1,91 @@
+<view class='t-notice' hidden='{{tipsShow!=true}}' catchtap='tipsShow' catchtouchmove='stop_move'>
+    <view class="tipsText">有问题，记得问客服哦~</view>
+</view>
+
+<view class='user_box' style='background: url({{bgimg}});'>
+    <view class='user_pic'>
+        <image src='{{userinfo.avatarurl?userinfo.avatarurl:userinfo.avatarUrl}}'></image>
+    </view>
+    <view class='userName'>{{userinfo.nickname?userinfo.nickname:userinfo.nickName}}</view>
+    <view class='useraddress' wx:if='{{userinfo.province != "" && userinfo.province != null}}'>{{userinfo.province}}{{userinfo.city}}</view>
+    <view class='useraddress' wx:el>{{userinfo.country}}</view>
+    <view class='user-kefu-button'>
+        <button class='user-kefu' open-type='contact' session-from="weapp">
+            <view class='toolicon tooliconSix'>
+                <image mode='aspectFit' src='../../img/kefu.png'></image>
+            </view>
+            <view class='tooltext'>客服</view>
+        </button>
+    </view>
+</view>
+<view class='userFun'>
+    <view class='mytool' catchtap='jump_collage'>
+        <view class='tooltitle'>
+            <view class='toolicon tooliconOne'>
+                <image mode='aspectFit' src='../../img/pind.png'></image>
+            </view>
+            <view class='tooltext'>我的拼单</view>
+        </view>
+        <view>
+            <text class='iconfont icon-right1'></text>
+        </view>
+    </view>
+    <view class='mytool' catchtap='jump_orderform'>
+        <view class='tooltitle'>
+            <view class='toolicon tooliconTwo'>
+                <image mode='aspectFit' src='../../img/puton.png'></image>
+            </view>
+            <view class='tooltext'>普通订单</view>
+        </view>
+        <view>
+            <text class='iconfont icon-right1'></text>
+        </view>
+    </view>
+    <view class='mytool' catchtap='jump_pickupgoods'>
+        <view class='tooltitle'>
+            <view class='toolicon tooliconThree'>
+                <image mode='aspectFit' src='../../img/tihuio.png'></image>
+            </view>
+            <view class='tooltext'>提货订单</view>
+        </view>
+        <view>
+            <text class='iconfont icon-right1'></text>
+        </view>
+    </view>
+    <view class='mytool' catchtap='jump_address'>
+        <view class='tooltitle'>
+            <view class='toolicon tooliconFour'>
+                <image mode='aspectFit' src='../../img/address.png'></image>
+            </view>
+            <view class='tooltext'>地址管理</view>
+        </view>
+        <view>
+            <text class='iconfont icon-right1'></text>
+        </view>
+    </view>
+    <view class='mytool' catchtap='jump_myCoupon'>
+        <view class='tooltitle'>
+            <view class='toolicon tooliconFive'>
+                <image mode='aspectFit' src='../../img/youhui.png'></image>
+            </view>
+            <view class='tooltext'>优惠卷/预付现金券</view>
+        </view>
+        <view>
+            <text class='iconfont icon-right1'></text>
+        </view>
+    </view>
+    <view class='mytool' catchtap='jump_comment'>
+        <view class='tooltitle'>
+            <view class='toolicon tooliconFive'>
+                <image mode='aspectFit' src='../../img/pl.png'></image>
+            </view>
+            <view class='tooltext'>评论</view>
+        </view>
+        <view>
+            <text class='iconfont icon-right1'></text>
+        </view>
+    </view>
+</view>
+<view class='shoppingCar' catchtap='jump_shopCar'>
+    <text class='iconfont icon-gouwucheman'></text>
+</view>

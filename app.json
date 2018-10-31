@@ -1,0 +1,90 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/member/member",
+    "pages/logs/logs",
+    "pages/my/my",
+    "pages/frig/frig",
+    "pages/shopcar/shopcar",
+    "pages/incollage/incollage",
+    "pages/details/details",
+    "pages/obtaingift/obtaingift",
+    "pages/coupon/coupon",
+    "pages/coldetails/coldetails",
+    "pages/payfound/payfound",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "全球鲜品",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/index.png",
+        "selectedIconPath": "img/indexsel.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "iconPath": "img/member.png",
+        "selectedIconPath": "img/membersel.png",
+        "text": "会员"
+      },
+      {
+        "pagePath": "pages/frig/frig",
+        "iconPath": "img/frig.png",
+        "selectedIconPath": "img/frigsel.png",
+        "text": "冰箱"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "img/my.png",
+        "selectedIconPath": "img/mysel.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pages/ordinary",
+      "pages": [
+        "pickdetails/pickdetails",
+        "coladdress/coladdress",
+        "selcoup/selcoup",
+        "selcash/selcash",
+        "enroll/enroll"
+      ]
+    },
+    {
+      "root": "pages/us",
+      "pages": [
+        "collage/collage",
+        "orderform/orderform",
+        "pickupgoods/pickupgoods",
+        "adress/adress",
+        "myCoupon/myCoupon",
+        "comment/comment"
+      ]
+    },
+    {
+      "root": "pages/receive",
+      "pages": [
+        "confirm/confirm",
+        "comdetails/comdetails",
+        "fillin/fillin",
+        "payment/payment",
+        "found/found",
+        "modify/modify",
+        "add/add",
+        "payfound/payfound",
+        "goodsComment/goodsComment"
+      ]
+    }
+  ]
+}

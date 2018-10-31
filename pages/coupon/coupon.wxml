@@ -1,0 +1,29 @@
+<view class='coupon_box' style='background:{{bg}} '>
+    <view class='topImg'>
+        <image mode='aspectFit' src='../../../img/red.png'></image>
+        <view class='explain'>
+            <view><image mode='aspectFit'  src='../../../img/storeNane.png'></image></view>
+        </view>
+        <view class='lable'>{{list.couponText}}</view>
+         
+        <view class='coupon_btn'>
+            <button class='click_draw click_btn' wx:if="{{list.receive==false}}" bindgetuserinfo='click_draw' open-type="getUserInfo">领取优惠卷</button>
+            <button class='click_use click_btn ' wx:else catchtap='click_use'>使用一下</button>
+        </view>
+    </view>
+    <view class='center_box'>
+        <view class='show_coupon_people'>共 {{list.nums}} 份，已领取 {{list.receive_num}} 份</view>
+        <view class='user_list_coupon' wx:for="{{list.userlist}}" wx:key="">
+            <view class='user_information'>
+                <view class='user_img'>
+                    <image mode='aspectFit' src='{{item.userImg}}'></image>
+                </view>
+                <view class='user_name'>{{item.userName}}</view>
+            </view>
+            <view class='text_tipx'>{{item.couponText}}</view>
+        </view>
+        <view class='center_tips'>
+            更多好友还在路上
+        </view>
+    </view>
+</view>

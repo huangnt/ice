@@ -1,0 +1,37 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view wx:if="{{lists.m_id==1}}">
+    <view class="tup">
+        <image mode='widthFix' src='{{lists.url}}'></image>
+    </view>
+    <view class='btn' catchtap='jump_enroll'>
+        <image mode='widthFix' src='{{b_img}}'></image>
+    </view>
+</view>
+<view wx:elif="{{lists.m_id !=1}}">
+    <view class='member_header'>
+        <view class='bg_img'>
+            <image mode='widthFix' src="{{lists.url}}"></image>
+        </view>
+        <view class='user_pic'>
+            <image mode='cover' src="{{lists.avatarurl}}"></image>
+        </view>
+    </view>
+    <view class='member_content'>
+        <view class='current'>会员积分：{{lists.integral}}</view>
+        <view class="progressBar">
+            <view class='progressBarColor'  wx:if="{{lists.parent != 0}}" style='width:{{lists.num}}%; background:{{lists.barcolor}};'>
+            <view class=' lastBar' wx:if="{{lists.parent == 0}}" style='background:{{lists.barcolor}}'></view>
+            </view>
+        </view>
+        <view class='D-value' wx:if="{{lists.parent != 0}}"> {{lists.title}}
+            <text class='iconfont icon-right1'></text>
+        </view>
+        <view class='D-value' wx:else>已升至最高等级会员</view>
+    </view>
+    <view class='member_footer'>
+        <!-- <image mode='widthFix' src='{{infoData.footerImg}}'></image> -->
+         <block wx:if="{{lists.content != null && lists.content != ''}}">
+                  <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+                </block>
+    </view>
+</view>

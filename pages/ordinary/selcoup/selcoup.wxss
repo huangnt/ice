@@ -1,0 +1,81 @@
+.selcop_list{
+    width: 710rpx;
+    margin: 40rpx auto;
+}
+image{
+    width: 100%;
+    height: 100%;
+}
+.list{
+    width: 710rpx;
+    height: 195rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:20rpx;
+}
+.list_img{
+    height: 195rpx;
+    width: 640rpx;
+    position: relative;
+    color: #fff;
+    flex-shrink: 0；
+}
+.left_box{
+    position: absolute;
+    border: 1rpx solid #fff;
+    width:335rpx;
+    height:150rpx;
+    top:0;
+    bottom:0;
+    margin:auto;
+    left:45rpx;
+}
+.conten_box{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+.conten_title{
+    font-size:35rpx;
+    margin:30rpx auto;
+}
+.use_date{
+    font-size:20rpx;
+}
+.rigth_box{
+    position:absolute;
+    top:0;
+    right:0;
+    width:225rpx;
+    height:195rpx;
+}
+
+.iconbox{
+    height:100%;
+    width:70rpx;
+    text-align:center;
+    line-height:195rpx;
+    flex-shrink: 0;
+}
+.worth{
+    text-align:center;
+    padding-top: 35rpx;
+}
+.fuhao{
+    font-size: 28rpx;
+}
+.worth_money{
+    font-size:90rpx;
+}
+.arrive{
+    font-size:25rpx;
+}
+.arrivetext{
+    position:absolute;
+    top:15rpx;
+    right:5rpx;
+    font-size:20rpx;
+    transform:rotate(45deg);
+}

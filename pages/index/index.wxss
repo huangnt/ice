@@ -1,0 +1,347 @@
+.t-notice{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin:  auto;
+    background: rgba(0, 0, 0, .65);
+    z-index: 9999
+}
+.t-image{
+    width: 350rpx;
+    height: 700rpx;
+    margin: 0 auto;
+}
+.t-notice image{
+    width: 100%;
+    height: 100%;
+}
+.t-button{
+    width: 220rpx;
+    height: 70rpx;
+    margin: 20rpx auto;
+    position: relative;
+}
+.t-button button{
+    height: 70rpx;
+    line-height: 70rpx;
+    background: #3c8bff;
+    color: #fff;
+    border-radius:50rpx;
+    font-size:26rpx;
+}
+.t-button::before{
+    position: absolute;
+    width: 220rpx;
+    height:70rpx;
+    content: "";
+    top: 10rpx;
+    background: transparent;
+    border: 3rpx solid #fff;
+    border-radius:50rpx;
+    box-sizing: border-box;
+}
+.recommend{
+    margin: 30rpx auto;
+}
+
+.swiper-container{
+  position: relative;
+  width: 700rpx;
+  margin: 0 auto;
+  box-shadow: 0 0 30rpx #ccc;
+}
+.swiper-container .swiper{
+  height: 350rpx;
+}
+.swiper-container .swiper .img{
+  width: 100%;
+  height: 100%;
+}
+.swiper-container .dots{
+  position: absolute;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+}
+.swiper-container .dots .dot{
+  margin:30rpx 10rpx 0;
+  width:15rpx;
+  height: 15rpx;
+  background: #bcbcbc;
+  border-radius: 50%;
+  transition: all .6s;
+  font: 300 18rpx/28rpx "microsoft yahei";
+  text-align: center;
+}
+.swiper-container .dots .dot.active{
+  background: #ff4949;
+  color:#fff;
+}
+.section{
+    margin:60rpx auto 0;
+    padding: 20rpx 0;
+}
+.section-title{
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+}
+.section-title text{
+    display: inline-block;
+    font-size: 35rpx;
+}
+.section-title .sectioncontent{
+    font-size: 36rpx;
+    color: #474546;
+    position: relative;
+    border:1rpx solid #c1c1c1;
+    padding:5rpx 40rpx;
+    border-radius:30rpx;
+}
+.section-title .section_small{
+    font-size:24rpx;
+    color:#ccc;
+    margin:0 20rpx;
+
+}
+.menu_box{
+ display: flex;
+ margin-top:30rpx; 
+}
+.menu{
+ flex: 1;
+ font-size:30rpx;
+ text-align: center;
+}
+.menupic{
+    display:block;
+    width: 100rpx;
+    height: 100rpx;
+    margin: 0 auto;
+}
+.Ice{
+    background-blend-mode: lighten; 
+}
+.menutext{
+    display:block;
+    margin:20rpx auto;
+
+}
+.borders{
+ color: #36A1F6;
+
+}
+.tab{
+    margin-top:35rpx; 
+}
+.goodslist{
+    width: 685rpx;
+    margin:30rpx auto;
+    border-radius:10rpx; 
+    box-shadow: 0 0 20rpx #d9d9d9;
+    background:#fff;
+
+}
+.goodsPic{
+    width: 685rpx;
+    height: 365rpx;
+    position: relative;
+}
+.goodsPic image{
+    width: 100%;
+    height: 100%;
+    border-radius:10rpx 10rpx 0 0; 
+}
+.tagone{
+    position: absolute;
+    left: -10rpx;
+    top: 20rpx;
+    width: 90rpx;
+    height: 45rpx;
+    background: #ffdfa2;
+    line-height: 45rpx;
+    font-size: 30rpx;
+    color: #333;
+}
+.tagone text{
+    position: relative;
+    width: 100% ;
+    height: 100%;
+    display: inline-block;
+    text-indent: .5em;
+}
+.tagone text::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 45rpx solid #ffdfa2;
+    border-right: 45rpx solid transparent;
+    right: -35rpx;
+    top:0rpx;
+    z-index: 0;
+}
+.tagone text::before{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 45rpx solid #ffdfa2;
+    border-right: 45rpx solid transparent;
+    right: -35rpx;
+    bottom:0rpx;
+    z-index: 0;
+}
+
+.tagtwo{
+    position: absolute;
+    left: -10rpx;
+    top: 80rpx;
+    width: 200rpx;
+    height:40rpx;
+    background:#3B8BFE;
+    font-size: 24rpx;
+    color: #fff;
+}
+.tagtwo text{
+    position: relative;
+    width: 100% ;
+    height: 100%;
+    display: inline-block;
+    line-height: 40rpx;
+    text-indent: .5em;
+}
+.tagtwo text::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 40rpx solid #3B8BFE;
+    border-right: 40rpx solid transparent;
+    right: -35rpx;
+    top:0;
+    z-index: 0;
+}
+.tagtwo text::before{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 40rpx solid #3B8BFE;
+    border-right: 40rpx solid transparent;
+    right: -35rpx;
+    bottom:0;
+    z-index: 0;
+}
+
+.goodsDetails{
+    padding:0 20rpx;
+}
+.global_d{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.sales{
+    width:auto;
+    font-size:26rpx;
+    color:#9d9d9d;
+    flex-shrink:0;
+    text-align:center;
+}
+.firstline{
+    height: 80rpx;
+    align-items: center;
+}
+.goodsLogo{
+    width:160rpx;
+    height:50rpx;
+    flex-shrink: 0;
+}
+.goodsLogo image,.goodsSales image{
+    height: 100%;
+    width: 100%;
+}
+.goodsName{
+    font-size:36rpx;
+    width: 400rpx;
+    display:-webkit-box;
+    overflow:hidden; 
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+    flex-shrink:0;
+
+}
+.goodsSales{
+    font-size: 30rpx;
+    color: #9d9d9d;
+    width:50rpx;
+    height:30rpx;
+    flex-shrink: 0;
+}
+.secondlines{
+    padding: 20rpx 0;
+}
+.goodsmoney{
+    font-size: 30rpx;
+    text-align: center;
+    border-right: 1rpx solid #000;
+}
+.goodsmoney:last-child{
+    border-right: none;
+}
+.goodsmoney text{
+    font-size: 30rpx;
+    font-weight: 500;
+}
+.Original{
+    color: #959595;
+    padding-right:10rpx; 
+}
+.Member{
+    color: #FD4242;
+    padding-left:10rpx; 
+}
+.buy button{
+    width: 180rpx;
+    height: 65rpx;
+    background: #259BFF;
+    border-radius:5rpx;
+    line-height: 65rpx;
+    font-size: 30rpx;
+    color: #fff;
+    box-shadow: 0rpx 10rpx 15rpx #d0e4ff; 
+}
+.body-view{
+    padding: 20rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #999;
+    position: relative;
+}
+.body-view::after{
+    position: absolute;
+    content: "";
+    width: 5em;
+    height: 1rpx;
+    background: #999;
+    right: 3em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.body-view::before{
+    position: absolute;
+    content: "";
+    width: 5em;
+    height: 1rpx;
+    background: #999;
+    left: 3em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}

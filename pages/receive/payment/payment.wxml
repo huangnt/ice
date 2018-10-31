@@ -1,0 +1,38 @@
+<view class='payment_content'>
+    <view class='payment_box'>
+        <view class='payment'>
+            <view class='payment_img'>
+                <image mode='aspectFit' src="../../../img/gift.png"></image>
+            </view>
+            <view class='ustext'>我们送了您几张优惠卷</view>
+            <view class='smalltext'>快去分享您的好友吧！</view>
+            <view class='payment_btn'>
+                <button class='bingxiang' catchtap='jump_frig'>返回冰箱</button>
+                <button class='fenxiang' open-type="share" hover-class="other-button-hover">立即分享</button>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='payment_content'>
+    <view class='payment_box'>
+        <view class='payment_title'>
+            <text class='lable'>为您推荐</text>
+            <text class='small'>全球鲜品热销商品</text>
+        </view>
+        <view class='rcm_goodslist'>
+            <view class='goodsList' wx:for="{{goods}}" wx:key="" bindtap='jump_details' data-index="{{index}}">
+                <view class='goods_img'>
+                    <image mode='aspectFit' src="{{item.img}}"></image>
+                </view>
+                <view class='goods_foot'>
+                    <text class='name'>{{item.title}}</text>
+                    <text class='momey'>¥ {{item.cost_price}}</text>
+                </view>
+            </view>
+
+        </view>
+    </view>
+</view>
+<view class='foot_tips'>
+    暂时只有这么多内容
+</view>

@@ -1,0 +1,140 @@
+page{
+    background: #f2f2f2;
+}
+.payment_content{
+    background: #fff;
+    padding:20rpx 0;
+    margin-top:15rpx;
+}
+.payment_box{
+    width: 710rpx;
+    height: auto;
+    margin: 0 auto;
+}
+.payment_img{
+    background: #fff;
+    width: 710rpx;
+    height: 335rpx;
+    text-align: center;
+}
+.payment image{
+    max-width: 100%;
+    max-height: 100%;
+}
+.ustext{
+    font-size: 35rpx;
+    text-align: center;
+}
+.smalltext{
+    text-align: center;
+    font-size: 25rpx;
+    color: #9d9d9d;
+    padding: 20rpx 0;
+}
+.payment_btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25rpx auto;
+}
+.payment_btn button{
+    width:340rpx;
+    height:70rpx;
+    line-height:70rpx;
+    color:#fff;
+    font-size:30rpx;
+    letter-spacing:10rpx;
+    border-radius:5rpx;
+}
+.bingxiang{
+    background: #3B8BFE;
+}
+.fenxiang{
+    background: #FE7B89;
+}
+.payment_title{
+    height:90rpx;
+    line-height:90rpx;
+}
+.lable{
+    font-size:35rpx;
+}
+.small{
+    font-size:25rpx;
+    color:#9d9d9d;
+    margin-left:20rpx;
+}
+.rcm_goodslist{
+    display: flex;
+    overflow: hidden;
+    overflow-x:scroll; 
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.goodsList{
+    width:235rpx;
+    flex-shrink: 0;
+    margin-right:10rpx;
+}
+.goods_img{
+    width: 230rpx;
+    height: 230rpx;
+    border:1rpx solid #cecccd;
+}
+.goods_img image{
+    max-width: 100%;
+    max-height: 100%;
+}
+.goods_foot{
+    font-size:28rpx;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.name{
+    width: 100%;
+    display: inline-block;
+    flex-shrink:0;
+    display:-webkit-box; 
+    overflow:hidden; 
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+}
+.momey{
+    width: 100%;
+    display: inline-block;
+    color: #FC225C;
+    flex-shrink:0;
+}
+.foot_tips{
+    margin:50rpx auto; 
+    text-align: center;
+    font-size: 28rpx;
+    color: #9d9d9d;
+    position: relative;
+}
+.foot_tips::after{
+    position: absolute;
+    content: "";
+    height: 1rpx;
+    width: 3rem;
+    background:#9d9d9d;
+    left: 3em;
+    top: 0 ;
+    bottom: 0;
+    margin: auto;
+}
+.foot_tips::before{
+    position: absolute;
+    content: "";
+    height: 1rpx;
+    width: 3rem;
+    background:#9d9d9d;
+    right: 3em;
+    top: 0 ;
+    bottom: 0;
+    margin: auto;
+}

@@ -1,0 +1,193 @@
+<view class='incollage_box'>
+    <view class='goods_list' wx:for="{{goodsList}}" wx:key="">
+        <view class='goods_content'>
+            <view class='goods_img'>
+                <image mode='aspectFit' src='{{item.image}}'></image>
+            </view>
+            <view class='goods_det'>
+                <view class='goods_name'>{{item.title}}</view>
+                <view class='univalent'>单价：￥ {{item.price}}</view>
+                <view class='goods_text'>
+                    <view class='goods_num'>数量：x {{item.num}}  <text class='notCtiy' wx:if="{{item.is_freight==false}}">(该城市暂不配送)</text></view>
+                </view>
+                <view class='sum_univalent'>
+                    <text>￥</text>{{item.total}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='other_box'>
+    <view class='other_conten'>
+        <view class='other_title'>
+            <text class='iconfont icon-dizhi'></text>
+            <view class='iconTitle'>地址管理</view>
+        </view>
+        <view wx:if="{{lists.a_id ==0}}">
+            <view class='address_box' bindtap='jump_address'>
+                <view class='addresstext'>暂无地址</view>
+                <view class='jump_address'>
+                    <text class='go_new'>去新建</text>
+                    <text class='iconfont icon-right1'></text>
+                </view>
+            </view>
+        </view>
+        <view wx:else>
+            <view class='address_box' bindtap='jump_address'>
+                <view class='addresstext'>
+                    <view class='contact_address'>{{lists.a_address_xq}}</view>
+                    <view>
+                        <text class='contact_name'>{{lists.a_name}}</text>
+                        <text class='contact_pho'>{{lists.a_tel}}</text>
+                    </view>
+                </view>
+                <view class='jump_address'>
+                    <text class='iconfont icon-right1'></text>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <view class='other_conten'>
+        <view class='collage'>
+            <view class='collage_title'>拼单人数：</view>
+            <view class='collage_small small'>
+                <text class='iconfont icon-jianhao' catchtap='jian_tianchong'></text>
+                <text class='peo_num'>{{peopleNum}}</text>
+                <text class='iconfont icon-jia' catchtap='jia_tianchong'></text>
+            </view>
+        </view>
+        <!-- 这里需要判断！如果用户不是会员显示这个 -->
+        <!-- <view class='collage' catchtap='jump_selectcoupon'>
+           
+            <view class='collage_small' >
+                <text>已使用满80减20</text>
+                <text class='iconfont icon-right1'></text>
+            </view>
+        </view> -->
+        <!-- 这里需要判断！如果用户是会员显示这个 -->
+        <view class='collage' catchtap='jump_selectcash'>
+         <view class='collage_title' wx:if="{{lists.m_id ==1}}">
+                优惠卷：
+            </view>
+            <view class='collage_title' wx:else>
+                现金卷：
+            </view>
+            <view class='collage_small' >
+                <text>{{coupon_title}}</text>
+                <text class='iconfont icon-right1'></text>
+            </view>
+        </view>
+        <view class='collage'>
+            <view class='collage_title'>
+                邮费：
+            </view>
+            <view class='collage_small'>
+                <text>{{lists.freight}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='other_box footer_other'>
+    <view class='other_conten'>
+        <view class='other_title'>
+            <text class='iconfont icon-huabanfuben'></text>
+            <text class='iconTitle'>拼单信息</text>
+        </view>
+        <view class='tips_text'>
+            您所拼单的商品，将在所有人完成付款后，店铺才为您进行发货，请尽快去敦促您的小伙伴发货哦~
+        </view>
+    </view>
+</view>
+
+<view class='footer_box'>
+    <view class='show_people_num'>
+        <text class='foot_red'>{{peopleNum}}人</text>参与拼单
+    </view>
+    <view class='show_btn_money'>
+        <view class='personal_money'>
+            您需要付：
+            <text class='foot_red'>￥{{personalmoney}}</text>
+        </view>
+        <view class='show_btn'>
+            <button catchtap='jump_found'>AA团</button>
+        </view>
+    </view>
+</view>
+<!-- 弹窗 -->
+<!-- <view class='mordwidos {{show==true?"hidemodal":""}}' bindtap='close_modal' catchtouchmove='true'>
+    <view class='bottom_modal' catchtap='stop' animation="{{animation}}">
+        <view class='mord-title'>
+            <view wx:if="{{carClick== '1'}}">优惠券</view>
+            <view wx:else="{{carClick== '2'}}">现金券</view>
+            <view class='iconfont icon-quxiao' catchtap="close_modal"></view>
+        </view>
+        <view class='selcop_list'>
+            <view class='list' wx:for="{{couponlist}}" wx:key="" wx:if="{{item.state==1 && item.coupon==0}}">
+                <view class='iconbox'>
+                    <icon type='success' size="20" color="#3C8CFF" wx:if="{{item.select==true}}" catchtap='selecticon' data-index="{{index}}"></icon>
+                    <icon type='success' size="20" color="#CCCCCC" wx:else catchtap='selecticon' data-index="{{index}}"></icon>
+                </view>
+                <view class='list_img'>
+                    <image mode='aspectFit' src='http://img.hb.aicdn.com/c86d8345bb1b298fc4d567af7f00a48933fcb5fd5d2d3-bYjVRX_fw658 ' wx:if="{{item.state==1 && item.coupon==0}}"></image>
+                    <view class='left_box'>
+                        <view class='conten_box'>
+                            <view class='conten_title' wx:if="{{item.coupon==1}}">满减优惠卷</view>
+                            <view class='conten_title' wx:elif="{{item.coupon==0}}">满减现金卷</view>
+                            <view class='use_date'>{{item.initial}}至{{item.end}}使用</view>
+                        </view>
+                    </view>
+                    <view class='rigth_box'>
+                        <view class='conten_box'>
+                            <view class='worth'>
+                                <text class='fuhao'>￥</text>
+                                <text class='worth_money'>{{item.worth}}</text>
+                            </view>
+                            <view class='arrive'>满{{item.arrive}}使用</view>
+                            <view class='arrivetext' wx:if="{{item.state==1}}">待使用</view>
+                            <view class='arrivetext' wx:else>已过期</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view> -->
+<view class='mordwidos {{show==true?"hidemodal":""}}' bindtap='close_modal' catchtouchmove='true'>
+        <view class='bottom_modal' catchtap='stop' animation="{{animation}}">
+            <view class='mord-title'>
+                <view wx:if="{{carClick== '1'}}">优惠券</view>
+                <view wx:else="{{carClick== '2'}}">现金券</view>
+                <view class='iconfont icon-quxiao' catchtap="close_modal"></view>
+            </view>
+            <view class='selcop_list'>
+                <view class='list' wx:for="{{couponlist}}" wx:key="">
+                    <view class='iconbox'>
+                        <icon type='success' size="20" color="#3C8CFF" wx:if="{{item.select==true}}" catchtap='selecticon' data-index="{{index}}"></icon>
+                        <icon type='success' size="20" color="#CCCCCC" wx:else catchtap='selecticon' data-index="{{index}}"></icon>
+                    </view>
+                    <view class='list_img'>
+                        <image mode='aspectFit' src='{{item.img}}'></image>
+                        <view class='left_box'>
+                            <view class='conten_box'>
+                                <view class='conten_title' wx:if="{{item.c_type==1}}">满减优惠卷</view>
+                                <view class='conten_title' wx:elif="{{item.c_type==2}}">现金卷</view>
+                                <view class='use_date'>{{item.times}}前使用</view>
+                            </view>
+                        </view>
+                        <view class='rigth_box'>
+                            <view class='conten_box'>
+                                <view class='worth'>
+                                    <text class='fuhao'>￥</text>
+                                    <text class='worth_money'>{{item.money}}</text>
+                                </view>
+                                <view class='arrive' wx:if="{{item.c_type==1}}">满{{item.moneys}}使用</view>
+                                <view class='arrivetext' wx:if="{{item.type==1}}">可使用</view>
+                                <view class='arrivetext' wx:else>未满足</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>

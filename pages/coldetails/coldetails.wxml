@@ -1,0 +1,105 @@
+<view class='bannerbg'>
+    <image mode="aspectFit" src='../../img/bgTwo.jpg'></image>
+</view>
+<view class='takedetails'>
+    <view class='takedetails_box'>
+        <view class='take_Title'>订单详情</view>
+        <view class='take_state'>
+            <text class='iconfont icon-banbenxinxi'></text>
+            <view class='state_Text' wx:if="{{pickupgoods.status==1}}">订单状态：待付款</view>
+            <view class='state_Text' wx:elif="{{pickupgoods.status==2}}">订单状态：待拼团</view>
+            <view class='state_Text' wx:elif="{{pickupgoods.status==3}}">订单状态:待发货</view>
+            <view class='state_Text' wx:elif="{{pickupgoods.status==-1}}">订单状态:已取消</view>
+            <view class='state_Text' wx:else>订单状态:已完成</view>
+        </view>
+        <view class='goodsList '>
+            <view class='{{pickupgoods.goods.length>2?"goods_hei":""}} {{pickupgoods.goodsHeigth==true?"goods_heiOne":""}}'>
+                <view class='goodsbox' wx:for="{{pickupgoods.goods}}" wx:key="">
+                    <view class='goods_img'>
+                        <image mode='aspectFit' src="{{item.img}}"></image>
+                    </view>
+                    <view class='goods_content'>
+                        <view class='goods_name'>{{item.name}}</view>
+                        <view class='goods_money'>单价：￥{{item.price}}</view>
+                        <view class='goods_num'>数量：x{{item.num}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class='genduo' catchtap='changeHeight' wx:if="{{pickupgoods.goodsList.length>2}}">{{pickupgoods.goodsHeigth==true?"收起":"更多"}}</view>
+        </view>
+    </view>
+    <view class='takedetails_box'>
+        <view class='other_content'>
+            <view class='confirm_t'>
+                <text class=''>订单编号：</text>
+                <text class='c_text'>{{pickupgoods.order_sn}}</text>
+                <text class='c_btn' catchtap='copyText'>复制</text>
+            </view>
+
+            <view class='confirm_t'>
+                <text class=''>下单时间：</text>
+                <text class='c_text'>{{pickupgoods.addtimes}}</text>
+            </view>
+            <view class='confirm_t'>
+                <text class=''>订单类型：</text>
+                <text class='c_text' style='color:#000;'>拼单</text>
+            </view>
+             <view class='confirm_t'>
+                <text class=''>拼单人数：</text>
+                <text class='c_text' style='color:#000;'>{{pickupgoods.p_num}}</text>
+            </view>
+            <view class='confirm_t people_num'>
+                <text class=''>已参团人数：</text>
+                <view class='userList'>
+                    <view class='people_box  {{select==true?"on":""}}'>
+                        <view class='user' wx:for="{{userlist}}" wx:key="">
+                            <image mode="aspectFit" src='{{item.img}}'></image>
+                        </view>
+                    </view>
+                    <text class='c_text '> 共{{userlist.length}}人</text>
+                </view>
+            </view>
+
+        </view>
+    </view>
+</view>
+<view class='takedetails_box'>
+    <view class='other_content'>
+        <view class='confirm_t'>
+            <text class=''>支付时间：</text>
+            <text class='c_text'>{{pickupgoods.pay_time}}</text>
+        </view>
+        <view class='confirm_t' wx:if="{{pickupgoods.status >3}}">
+            <text class=''>快递单号：</text>
+            <text class='c_text'>{{pickupgoods.kuaidi_num}}</text>
+            <text class='c_btn' catchtap='copycourierNun'>复制</text>
+        </view>
+    </view>
+</view>
+<view class='takedetails_box'>
+    <view class='other_content' >
+        <view class='confirm_t'>
+            <text class=''>邮费：</text>
+            <text class='c_text'> ￥{{pickupgoods.logistics}}</text>
+        </view>
+        <view class='confirm_t'>
+            <text class=''>总金额：</text>
+            <text class='c_text'>￥{{pickupgoods.total_p}}</text>
+        </view>
+        <view class='confirm_t'>
+            <text class=''>优惠金额：</text>
+            <text class='c_text'>{{pickupgoods.amount}}</text>
+        </view>
+        <view class='confirm_t'>
+            <text class=''>实际消费：</text>
+            <text class='c_text c_momey'> ￥{{pickupgoods.price_h}}</text>
+        </view>
+       <view class='confirm_btn'>
+            <button class='red_btn' catchtap="payment" wx:if="{{pickupgoods.status ==1}}">立即付款</button>
+            <button class='red_btn' open-type="share" wx:if="{{pickupgoods.status ==2}}">分享优惠卷</button>
+            <!--pickupgoods.state 判断状态值是否显示  -->
+            <button class='fff_btn' catchtap='confirm_btn' wx:if="{{pickupgoods.status ==1}}">取消订单</button>
+             <button class='fff_btn' open-type="contact" session-from="weapp"  wx:if="{{pickupgoods.status >=3}}">申请售后</button>
+        </view>
+    </view>
+</view>

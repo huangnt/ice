@@ -1,0 +1,86 @@
+<view class='t-notice' hidden='{{tipsShow!=true}}' catchtouchmove='stop_move'>
+    <view class='t-image'>
+        <image mode='aspectFit' src='../../img/tips.png'></image>
+    </view>
+    <view class='t-button'>
+        <button catchtap='tipsShow'>朕知道了！</button>
+    </view>
+</view>
+<view class="recommend">
+    <view class="swiper-container">
+        <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+            <swiper-item wx:for="{{slider}}" wx:key="{{index}}" data-id="{{item.id}}">
+                <image src="{{item.img}}" class="img"  data-index="{{index}}" catchtap='jump_home'></image>
+            </swiper-item>
+        </swiper>
+        <view class="dots">
+            <block wx:for="{{slider}}" wx:key="unique">
+                <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}"></view>
+            </block>
+        </view>
+    </view>
+</view>
+<view class='section'>
+    <view class='section-title'>
+        <text class='section_small'>Commodity</text>
+        <text class='sectioncontent'>商品分类</text>
+        <text class='section_small'>classification</text>
+    </view>
+    <view class="menu_box">
+        <text wx:for="{{img}}" wx:key="" class='menu {{menuTapCurrent== item.id ?"borders":""}}' data-current="{{item.id}}" catchtap="menuTap">
+            <text class='menupic Ice ' style='background: url({{item.icon}}) no-repeat center {{menuTapCurrent==item.id ? ", linear-gradient(#06c7ff,#06c7ff) " : "" }};background-size: 100%;'></text>
+        <text class='menutext'>{{item.title}}</text>
+        </text>
+    </view>
+    <view class="tab">
+        <view class='goodslist' wx:for="{{ice}}" wx:key="" data-index="{{index}}" bindtap='jump_details'>
+            <view class='goodsPic'>
+                <image src='{{item.img}}'></image>
+                <view class='tagone' wx:if="{{item.is_hot==1}}">
+                    <text>热卖</text>
+                </view>
+                  <view class='tagone' wx:if="{{item.is_new==1}}">
+                    <text>新品</text>
+                </view>
+                <view class='tagone' wx:if="{{item.is_rec==1}}">
+                    <text>推荐</text>
+                </view>
+              
+                <view class='tagtwo'>
+                    <text>新西兰原装进口</text>
+                </view>
+            </view>
+            <view class='goodsDetails'>
+                <view class='global_d firstline'>
+                    <view class='goodsLogo' wx:if="{{item.logo !=null && item.logo != ''}}">
+                        <image mode='aspectFit' src='{{item.logo}}'></image>
+                    </view>
+                    <view class='goodsName'>{{item.title}}</view>
+                    <view class='goodsSales' wx:if="{{item.national !=null && item.national != ''}}">
+                        <image mode='aspectFit' src='{{item.national}}'></image>
+                    </view>
+                </view>
+                <view class='global_d secondlines'>
+                    <view class='global_d goodsprice'>
+                        <view class='goodsmoney Original '>
+                            <view>原价</view>
+                            <view>￥<text>{{item.cost_price}}</text> </view>
+                        </view>
+                        <view class='goodsmoney Member'>
+                            <view>会员价</view>
+                            <view>￥<text>{{item.price}}</text> </view>
+                        </view>
+                    </view>
+                    <view class='sales'>月销{{item.sale_num}}件</view>
+                    <view class='buy'>
+                        <button>购买</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- <view class="tab" hidden="{{menuTapCurrent!='2'}}">tab2</view>
+    <view class="tab" hidden="{{menuTapCurrent!='3'}}">tab1</view>
+    <view class="tab" hidden="{{menuTapCurrent!='4'}}">tab2</view> -->
+</view>
+<view class='body-view'>{{Dataloading}}</view>

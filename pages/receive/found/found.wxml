@@ -1,0 +1,65 @@
+<view class='found_box'>
+    <view class='found'>
+        <view class='found_img'>
+            <image mode='aspectFit' src="../../../img/found.png"></image>
+        </view>
+        <view class='ustext'>您已成功发起拼单</view>
+        <view class='smalltext'>快叫您的小伙伴来点击付款吧！</view>
+    </view>
+    <view class='found'>
+        <view class='found_title'><text class='iconfont icon-dindan'></text> 订单信息</view>
+        <view class='found_goodslist' >
+            <view class='goodslist' wx:for="{{goodslist}}" wx:key="">
+                <view class='goods_img'>
+                    <image mode='aspectFit' src='{{item.img}}' ></image>
+                </view>
+                <view class='goods_content'>
+                    <view class='name'>{{item.name}}</view>
+                    <view class='num'>数量: ×{{item.price}}</view>
+                    <view class='momey'>
+                        <view class='univalent'>单价：￥{{item.money}}</view>
+                    </view>
+                    <view class='sum'>
+                        <text>￥{{item.prices}}</text> 
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='found'>
+        <view class='found_info'>
+            
+            <view class='info_sum'>
+                <view class='info_people'>商品总价:
+                    <text>￥{{pickupgoods.price}}</text>
+                </view>
+                <view class='apiecepay'>邮费：
+                    <text>￥{{pickupgoods.logistics}}</text>
+                </view>
+            </view>
+             <view class='info_sum'>
+                <view class='info_people'>订单金额:
+                    <text>￥{{pickupgoods.total_p}}</text>
+                </view>
+                <view class='apiecepay'>优惠金额：
+                    <text>￥{{pickupgoods.amount}}</text>
+                </view>
+            </view>
+            <view class='info_sum'>
+                <view class='info_people'>拼单人数:
+                    <text>×{{pickupgoods.p_num}}</text>
+                </view>
+                <view class='apiecepay'>每人需付：
+                    <text>￥{{pickupgoods.p_price}}</text>
+                </view>
+            </view>
+            <view class='info_tips'>
+                <view class='info_tipstext'>所有用户付款完成后，订单将发至：</view>
+                <view class='info_address'>{{pickupgoods.address_xq}}</view>
+            </view>
+        </view>
+    </view>
+    <view class='found_btn'>
+        <button class='call' form-type='submit' open-type="share">邀请好友</button>
+    </view>
+</view>

@@ -1,0 +1,39 @@
+<view class='frigbox'>
+    <view class='frigList' wx:for="{{frigGoods}}" wx:key="">
+        <view class='goods_checkbox'>
+            <icon type='success' size='18' color='#FF4948' wx:if="{{item.selected}}" data-index="{{index}}" catchtap='selectList'></icon>
+            <icon type='success' size='18' color='#D9D9D9' wx:else data-index="{{index}}" catchtap='selectList'></icon>
+        </view>
+        <view class='goodsSection'>
+            <view class='frigGoodsImg' bindtap='jump_details' data-index="{{index}}">
+                <image src='{{item.img}}'></image>
+            </view>
+            <view class='fiigGoodsconten'>
+                <view class='fiigGoodsName'>{{item.title}}</view>
+                <view class='fiigGoodsStock'>
+                    <view>冰箱存货:{{item.frigStock}}件</view>
+                    <view class='pickChoice'>
+                        <text class='iconfont icon-jian' catchtap='jian_tianchong' data-index='{{index}}'></text>
+                        <text class='goodsNum'>{{item.num}}</text>
+                        <text class='iconfont icon-add' catchtap='jia_tianchong' data-index='{{index}}'></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='footer'>
+    <view class='ccc'>
+        <view class='total'>总计
+            <text>{{seleNum}}</text> 商品</view>
+        <view class='jiesuan'>
+            <view class='btn_total'>
+            <!-- open-type="{{share}} catchtap='{{tishi}}'"  -->
+                <button class='red'  catchtap='jump_pickdetails' data-case='1'>送给朋友</button>
+            </view>
+            <view class='btn_total'>
+                <button class='blue' catchtap='jump_pickdetails' data-case='2'>自己提货</button>
+            </view>
+        </view>
+    </view>
+</view>

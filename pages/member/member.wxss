@@ -1,0 +1,89 @@
+image{
+    width: 100%;
+    height: 100%;
+}
+.member_header{
+    position: relative;
+    width: 750rpx;
+    height: 670rpx;
+}
+.bg_img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+}
+.bg_img image{
+    width: 100%;
+    height: 100%;
+}
+.user_pic{
+    position:absolute;
+    width:118rpx;
+    height:118rpx;
+    border-radius:50%;
+    border:5rpx solid #666;
+    left:0;
+    right:0;
+    margin:auto;
+    top:75rpx;
+    background:#ccc;
+    overflow:hidden;
+    box-sizing:border-box;
+}
+.user_pic image{
+    width: 100%;
+    height: 100%;
+}
+.member_content{
+    width: 750rpx;
+    height: 200rpx;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+.current{
+    margin:40rpx auto 20rpx;
+    font-size:32rpx;
+}
+.D-value{
+    margin:20rpx auto;
+    font-size:28rpx;
+}
+.D-value .iconfont{
+    font-size:24rpx;
+    margin-left:20rpx;
+}
+.progressBar{
+    width: 540rpx;
+    height: 10rpx;
+    margin: 0 auto;
+    background: #dcdcdc;
+    border-radius:5rpx; 
+}
+.progressBarColor{
+    width:60%;
+    height: 100%;
+    border-radius:5rpx; 
+    position: relative;
+    /* border-right:5rpx solid #fff; */
+}
+.member_footer{
+    width: 750rpx;
+    padding-bottom: 200rpx;
+}
+.member_footer image{
+    width: 100%;
+}
+.lastBar{
+    position: absolute;
+    width:15rpx;
+    height: 15rpx;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius:50%; 
+    border:1rpx solid #fff;
+}

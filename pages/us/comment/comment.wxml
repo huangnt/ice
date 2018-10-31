@@ -1,0 +1,22 @@
+<view class='comment_list_box' wx:for="{{Mycomment}}" wx:key="" wx:for-item="see" >
+    <view class='comment-top-box'>
+        <view class='comment-top'>
+            <view class='comment-top-img'>
+                <image mode='aspectFit' src='{{see.goodsImg}}'></image>
+            </view>
+            <view class='comment-top-Name'>{{see.title}}</view>
+        </view>
+        <view class='score-box'>
+            <text class='iconfont icon-xingxing' wx:for="{{see.levels}}" wx:key=""></text>
+        </view>
+    </view>
+    <view class='comment-contem-text'>
+        {{see.content}}
+    </view>
+    <view class='goods-picture' wx:if="{{see.picture_list != ''}}" >
+        <view class=' goods-picture-list' wx:for="{{see.picture_list}}"  wx:key="" >
+            <image mode='aspectFit' src='{{item}}' bindtap="changePreview" data-see='{{see}}' data-index='{{index}}'></image>
+        </view>
+    </view>
+    <view class='time'>{{see.time}}</view>
+</view>

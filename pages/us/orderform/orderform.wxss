@@ -1,0 +1,244 @@
+page{
+    background: #f2f2f2;
+}
+button::after{
+    border: none;
+}
+.menu_box{
+ height: 115rpx;
+ background: #fff;
+ padding: 20rpx 0;
+ box-sizing: border-box;
+}
+.menu_smallbox{
+    display: flex;
+    align-items: center;
+    height: 75rpx;
+    border-bottom:1rpx solid #ddd; 
+}
+.menu{
+    flex: 1;
+    font-size:35rpx;
+    text-align: center;
+    color: #9d9d9d;
+    height:100%;
+    line-height:75rpx;
+}
+.borders{
+    color: #f00;
+    position: relative;
+}
+.borders::after{
+  position: absolute;
+  content: "";
+  width: 2em;
+  height: 5rpx;
+  background:  #259bff;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+.tab1{
+  margin: 20rpx auto;
+  background: #f2f2f2;
+}
+.goodsList{
+  background: #fff;
+  margin-bottom:30rpx; 
+  /* height: 310rpx; */
+  border-radius:10rpx; 
+  padding:25rpx 0;
+}
+.goods_bianhao{
+    font-size: 24rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 20rpx;
+}
+.goods_bianhaoNum{
+    text-indent: 1em;
+    position: relative;
+    width: 80%;
+    flex-shrink: 0;
+     font-size: 24rpx;
+}
+.goods_bianhaoNum::after{
+    position: absolute;
+    width: 10rpx;
+    height: 10rpx;
+    content: "";
+    background: #727272;
+    border-radius:50%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto; 
+}
+.goods_content{
+    width: 455rpx;
+    height: 180rpx;
+}
+navigator{
+    width: 100%;
+    height: 100%;
+}
+.goods_schedule{
+    display: flex;
+    justify-content: space-between;
+    flex-shrink:0; 
+}
+.goods_countm{
+    color: #9c9c9c;
+}
+.state_text{
+    color: #fc4847;
+}
+.goods_details{
+    height: 215rpx;
+    padding:0 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: scroll;
+    color: #010101;
+    box-sizing: border-box;
+    border-bottom:1rpx solid #d9d9d9;
+}
+.goods_details:nth-last-child(1){
+    border:none;
+}
+.goods_detailsheigth{
+    max-height:425rpx; 
+    overflow: hidden;
+}
+.select_goods{
+    max-height:none; 
+}
+.goods_img{
+    width: 180rpx;
+    height: 180rpx;
+    border: 1rpx solid #d9d9d9;
+    border-radius:10rpx; 
+    text-align: center;
+    margin-right: 15rpx;
+    flex-shrink:0; 
+    overflow: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.goods_img image{
+    max-height:100%; 
+    max-width: 100%;
+}
+.goods_title{
+   font-size: 32rpx;
+   width: 100%;
+}
+.color_text{
+    font-size: 24rpx;
+    color: #b4b4b4;
+    margin-top:15rpx; 
+}
+.goods_operate,.goods_btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.goods_operate{
+    padding:0 20rpx;
+    margin-top:25rpx;
+    font-size: 30rpx;
+    box-sizing: border-box;
+}
+.goods_detailsNum{
+    border-bottom:1rpx solid #d9d9d9;
+    padding-bottom:20rpx;  
+}
+.genduo{
+    width:150rpx;
+    height:40rpx;
+    border:1rpx solid #d9d9d9;
+    font-size:24rpx;
+    color:#9d9d9d;
+    text-align:center;
+    margin:0 auto;
+    line-height: 40rpx;
+}
+
+.btn{
+    line-height:45rpx;
+    border:1rpx solid;
+    padding:5rpx 20rpx;
+    border-radius:10rpx;
+    font-size: 25rpx;
+}
+
+
+.btn_refund{
+    border-color: #727272;
+    color: #969696;
+}
+.goods_operateText{
+    display: flex;
+    align-items: center;
+}
+
+.goods_sumNum{
+    color: #9c9c9c;
+    flex-shrink:0; 
+    font-size:24rpx;
+    margin-right:20rpx;
+}
+.goods_payment{
+    color: #717171;
+    flex-shrink:0; 
+    font-size:24rpx;    
+}
+.goods_payment text{
+    font-size:28rpx;    
+}
+.tips{
+    text-align: center;
+    font-size: 24rpx;
+    color: #9d9d9d;
+    position: relative;
+    margin: 30rpx auto;
+    height:30rpx;
+    line-height: 30rpx;
+}
+.tips::after{
+    position: absolute;
+    right: 120rpx;
+    width: 5em;
+    content: "";
+    height: 1rpx;
+    background: #9d9d9d;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.tips::before{
+    position: absolute;
+    left:120rpx;
+    width: 5em;
+    content: "";
+    height: 1rpx;
+    background: #9d9d9d;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.btn_share{
+    background: #fff;
+    color: #fd4a46;
+    border: 1rpx solid #fd4a46;
+    font-size: 25rpx;
+    line-height: 45rpx;
+    padding:5rpx 20rpx;  
+    margin-right:20rpx;
+}

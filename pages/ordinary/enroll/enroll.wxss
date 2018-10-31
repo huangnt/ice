@@ -1,0 +1,187 @@
+page{
+    background: #fff;
+}
+.enroll_box{
+    width: 710rpx;
+    margin: 0 auto;
+    padding-top: 30rpx;
+}
+.enroll_Title{
+    padding: 10rpx 0;
+    font-size: 32rpx;
+}
+.enroll_Title .iconfont{
+    margin-right:15rpx; 
+    font-size: 28rpx;
+}
+.enroll_Title .icon-geren{
+    color: #3B8BFE;
+}
+.enroll_Title .icon-ziyuan{
+    color: #FF7C8A;
+}
+.enroll_input input{
+    padding: 15rpx 0;
+    border-bottom:1rpx solid #cdcdcd; 
+    font-size: 28rpx;
+}
+.enroll_input text{
+    font-size:24rpx;
+    color:#9d9d9d;
+    margin: 15rpx auto;
+}
+.select_sex{
+    margin:40rpx  auto;
+    width:640rpx;
+    display:flex;
+    text-align: center;
+}
+.people{
+    width: 320rpx;
+    text-align: center;
+    height: 75rpx;
+    line-height: 75rpx;
+    color: #9d9d9d;
+    font-size: 30rpx;
+}
+.man{
+    border-left:1rpx solid #ccc ;
+    border-top:1rpx solid #ccc ;
+    border-bottom:1rpx solid #ccc ;
+    border-radius:70rpx 0 0 70rpx; 
+}
+.woman{
+    border-right:1rpx solid #ccc ;
+    border-top:1rpx solid #ccc ;
+    border-bottom:1rpx solid #ccc ;
+     border-radius:0 70rpx  70rpx 0; 
+}
+.enroll_blueSex{
+    background: #3B8BFE;
+    color: #fff;
+    border-color:  #3B8BFE;
+}
+.select_data{
+    font-size:30rpx;
+    margin-top:40rpx;
+}
+.select{
+    display: flex;
+    justify-content: space-between;
+}
+.select_num{
+    width: 150rpx;
+    text-align: center;
+}
+.picker{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #d9d9d9;
+}
+.tijiao {
+    margin-top:100rpx;
+    width:710rpx;
+    height:75rpx;
+    line-height:75rpx;
+    color:#fff;
+    font-size:30rpx;
+    letter-spacing:10rpx;
+    border-radius:5rpx;
+    background: #3B8BFE;
+}
+.am-modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, .6);
+    z-index: 9999;
+    display: none;
+}
+.am-zhifu{
+    position: absolute;
+    width: 100%;
+    height: 600rpx;
+    background: #fff;
+    margin: 0 auto;
+    bottom: -600rpx;
+    border-radius:20rpx 20rpx 0 0; 
+    box-sizing: border-box;
+}
+.am-zhifu .sm_logo{
+    margin:15rpx auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    line-height: 1;
+    width: 680rpx;
+}
+.am-zhifu .logo{
+    width: 210rpx;
+    height: 25rpx;
+    position:relative;
+}
+.am-zhifu .logo image{
+    max-width: 100%;
+    height: 100%;
+    position:absolute;
+    bottom: 0;
+}
+.close .icon-close{
+    font-size:36rpx;
+    color:#666;
+    font-weight:bolder;
+}
+.zhifu_box{
+    width: 680rpx;
+    margin: 50rpx auto 0;
+}
+.xuanzhong{
+    height:120rpx;
+}
+.xuanzhong image{
+    max-width: 100%;
+    height: 100%;
+    text-align:center;
+}
+.orNot{
+    display:flex;
+    align-items:flex-start;
+    margin-top:30rpx;
+    font-size:25rpx;
+    color:#000;
+}
+.contract{
+    padding-left:1em;
+}
+.pay{
+    margin-top:100rpx;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.pay_title{
+    font-size:32rpx;
+    color:#000;
+}
+.pay_momey{
+    font-size: 40rpx;
+    color: #ff5757;
+}
+.pay_button{
+    height:70rpx;
+    text-align:center;
+    line-height:70rpx;
+    background:#3c8bff;
+    color:#fff;
+    font-size:34rpx;
+    border-radius:30rpx;
+    margin-top:35rpx;
+    box-shadow:0 0 30rpx #ccc;
+}
+.opent_box{
+    display: block;
+}

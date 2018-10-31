@@ -1,0 +1,64 @@
+<view class='user_box'>
+    <image class='bg_use' mode='widthFix' src='../../../img/lip.jpg'></image>
+    <view class='he_box'>
+        <view class='he_information'>
+            <view class='he_img'>
+                <image mode='aspectFit' src="{{list.avatarurl}}"></image>
+            </view>
+            <view class='he_name'>{{list.nickname}}</view>
+        </view>
+    </view>
+</view>
+<view class='obtaingift_box'>
+    <view class='gift_goods'>
+        <view class='gift_goods_list_box {{gift_goods.length>2?"hiddenHei":""}} {{clickMore==true?"show":""}}' animation="{{animation}}" >
+            <view class='gift_list' wx:for="{{gift_goods}}" wx:key="">
+                <view class='gift_img'>
+                    <image mode='aspectFit' src="{{item.img}}"></image>
+                </view>
+                <view class='gift_centen'>
+                    <view class='gift_name'>{{item.name}}</view>
+                    <view class='gift_num'>单价：￥{{item.price}}</view>
+                    <view class='gift_num'>数量：x {{item.num}}</view>
+                    <view class='gift_All'>
+                        <text>￥</text>{{item.prices}}</view>
+                </view>
+            </view>
+        </view>
+        <view class='more-box-text' wx:if="{{gift_goods.length>2}}" bindtap='translate'>{{clickMore==false?"更多":"收起"}}</view>
+    </view>
+    <view class='my_box'>
+        <form bindsubmit="formSubmit">
+            <view class='my_title'>
+                <view class='iconbox'>
+                    <text class='iconfont icon-daishouhuo'></text>
+                </view>
+                <view class='title_text'>填写您的收货信息</view>
+            </view>
+            <view class="section">
+                <view class="section_name">收 货 人 ：</view>
+                <input type='text' name="name" value=''></input>
+            </view>
+            <view class="section">
+                <view class="section_pho">电话号码：</view>
+                <input type='number' name="tel" value=''></input>
+            </view>
+            <view class="section">
+                <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+                    <view class="picker">
+                        <text>所在地区：</text>
+                        <view type='text'>{{region[0]}} {{region[1]}} {{region[2]}}</view>
+                    </view>
+                </picker>
+            </view>
+            <view class="section_one">
+                <view class="section_det">详细地址：</view>
+                <textarea class='' name="detaddress" value=""></textarea>
+            </view>
+
+            <view class="btn-area">
+                <button formType="submit">领取礼品</button>
+            </view>
+        </form>
+    </view>
+</view>

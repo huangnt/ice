@@ -1,0 +1,25 @@
+<view class="page">
+  <view class="loading_tip">
+    <view class="title">
+        <view class='content'>
+          <text>授权登录</text>          
+          <text class='small'>请点击按钮确认授权</text>
+        </view>
+
+        <image mode='widthFix' src='../../img/undraw_product_teardown_elol.png'></image>
+    </view>
+
+    <button open-type="getUserInfo" bindgetuserinfo='onGotUserInfo' class='ok' wx:if="{{hidden==false}}" lang="zh_CN">
+      <image src='../../img/btn.png'></image>
+    </button>
+
+    <view class="wx_shouquan" wx:else>
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore_tips">启动中</view>
+    </view>
+  </view>
+  
+    <!-- <view class='cancel'>
+      <text bindtap='jump_index'>拒绝授权</text>
+    </view> -->
+</view>

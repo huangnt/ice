@@ -1,0 +1,83 @@
+<view class='payfound_content'>
+    <view class='goodsList {{goods.length>2?"goodsheigrh":""}} {{seemode==true?"seeheigth":""}}'>
+        <view class='goods-box' wx:for="{{goods}}" wx:key="">
+            <view class='goods_Img'>
+                <image mode='aspectFit' src='{{item.img}}'></image>
+            </view>
+            <view class='goods_content'>
+                <view class='goods_name'>{{item.name}}</view>
+                <view class='goods_money'>单价：￥{{item.price}}</view>
+                <view class='goods_num'>数量：x {{item.num}}</view>
+                <view class='sun_money'>
+                    <text>￥</text>{{item.prices}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='mode_box' wx:if="{{goods.length>2}}" catchtap="mode">{{seemode==true?"收起":"更多"}}</view>
+</view>
+<view class='payfound_address'>
+    <view class='contact_way'>
+        <view class='contact_title'>
+            <text class='iconfont icon-dizhi'></text>
+            <text class='title'>收货地址</text>
+        </view>
+        <view class='contact_people'>
+            <view class='contact_name'> {{list.receiver}}</view>
+            <view class='contact_tel'> {{list.tel}}</view>
+        </view>
+        <view class='contact_add'>
+           {{list.address_xq}}
+        </view>
+    </view>
+    <view class='found_box'>
+        <view class='found_title'>
+            <text class='iconfont icon-huabanfuben'></text>
+            <text class='title'>活动</text>
+            <text class='tips' wx:if='{{list.status==1 || list.status==2}}'>进行中</text>
+            <text class='tips' wx:elif='{{list.status== -1}}'>已取消</text>
+            <text class='tips' wx:else>已结束</text>
+        </view>
+        <view class='found_user'>
+            <view class='user_list'>
+                <view class='user_sel' wx:for="{{userlist}}" wx:key="">
+                    <image mode='aspectFit' src='{{item.img}}'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='footer'>
+    <view class='renshu'>
+        <text class='renshu_num'>{{list.p_num}}人</text>
+        <text class='chanyv'>已参与AA</text>
+    </view>
+    <view class='all_box'>
+        <view class='all_momey'  wx:if='{{list.status==1 || list.status==2}}'>
+            <view class='all_text'>您需要付：</view>
+            <view class='jiaqian'>
+                <text class='fuhao'>￥</text>
+                <text class='jiage'>{{list.p_price}}</text>
+            </view>
+        </view>
+        <view class='all_momey'  wx:elif='{{list.status== -1}}'>
+            <view class='all_text'>活动已取消</view>
+            <view class='jiaqian'>
+                <text class='fuhao'></text>
+                <text class='jiage'></text>
+            </view>
+        </view>
+        <view class='all_momey'  wx:else>
+            <view class='all_text'>活动已结束</view>
+            <view class='jiaqian'>
+                <text class='fuhao'></text>
+                <text class='jiage'></text>
+            </view>
+        </view>
+        <view class='btn' >
+            <button catchtap='payment' wx:if='{{list.status==1 || list.status==2}}'>立即支付</button>
+            <button catchtap='cancel' wx:elif='{{list.status== -1}}'>返回首页</button>
+            <button catchtap='jiesu' wx:else>返回首页</button>
+        </view>
+    </view>
+</view>

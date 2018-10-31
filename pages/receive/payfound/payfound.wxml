@@ -1,0 +1,65 @@
+<view class='payfound_content'>
+    <view class='goodsList {{goods.length>2?"goodsheigrh":""}} {{seemode==true?"seeheigth":""}}'>
+        <view class='goods-box' wx:for="{{goods}}" wx:key="">
+            <view class='goods_Img'>
+                <image mode='aspectFit' src='{{item.img}}'></image>
+            </view>
+            <view class='goods_content'>
+                <view class='goods_name'>{{item.name}}</view>
+                <view class='goods_money'>单价：￥{{item.money}}</view>
+                <view class='goods_num'>数量：x {{item.num}}</view>
+                <view class='sun_money'>
+                    <text>￥</text>{{item.money *item.num }}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='mode_box' wx:if="{{goods.length>2}}" catchtap="mode">{{seemode==true?"收起":"更多"}}</view>
+</view>
+<view class='payfound_address'>
+    <view class='contact_way'>
+        <view class='contact_title'>
+            <text class='iconfont icon-dizhi'></text>
+            <text class='title'>收货地址</text>
+        </view>
+        <view class='contact_people'>
+            <view class='contact_name'>冷先生</view>
+            <view class='contact_tel'>12354861321</view>
+        </view>
+        <view class='contact_add'>
+            广东省珠海市香洲区XXX镇XXX街XXX号XXX花园X栋
+        </view>
+    </view>
+    <view class='found_box'>
+        <view class='found_title'>
+            <text class='iconfont icon-huabanfuben'></text>
+            <text class='title'>活动</text>
+            <text class='tips'>进行中</text>
+        </view>
+        <view class='found_user'>
+            <view class='user_list'>
+                <view class='user_sel' wx:for="{{userlist}}" wx:key="">
+                    <image mode='aspectFit' src='{{item.img}}'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='footer'>
+    <view class='renshu'>
+        <text class='renshu_num'>3人</text>
+        <text class='chanyv'>已参与AA</text>
+    </view>
+    <view class='all_box'>
+        <view class='all_momey'>
+            <view class='all_text'>您需要付：</view>
+            <view class='jiaqian'>
+                <text class='fuhao'>￥</text>
+                <text class='jiage'>76</text>
+            </view>
+        </view>
+        <view class='btn' >
+            <button catchtap='payment'>立即支付</button>
+        </view>
+    </view>
+</view>

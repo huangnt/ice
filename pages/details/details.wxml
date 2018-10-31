@@ -1,0 +1,152 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='goods_detailbox'>
+    <view class="recommend">
+        <view class="swiper-container">
+            <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+                <swiper-item wx:for="{{lists.img}}" wx:key="{{index}}" data-id="{{index}}">
+                    <image mode='aspectFit' src="{{item}}" class="img" data-index="{{index}}"></image>
+                </swiper-item>
+            </swiper>
+            <view class="dots">
+                <block wx:for="{{lists.img}}" wx:key="unique">
+                    <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}"></view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <view class='detail_box'>
+        <view class='detail_content'>
+            <view class='nameAndsell'>
+                <view class='name'>{{lists.title}}</view>
+                <view class='sell'>月销售{{lists.sale_num}}</view>
+            </view>
+            <view class='goods_detail'>
+                <view class='goods_detail_text'>{{lists.sketch}}</view>
+                <!-- <view class='goods_detail_address'>广东广州</view> -->
+            </view>
+            <view class='momeyAndcar'>
+                <view class='goods_momey'>
+                    <text class='member'>会员价￥{{lists.price}}</text>|
+                    <text class='originally'>原价￥{{lists.cost_price}}</text>
+                </view>
+                <view class='jionCar' catchtap='jump_jionCar'>
+                    <text class='iconfont icon-gouwucheman'></text>
+                </view>
+            </view>
+            <view class='goods_detail'>
+                运费：0.00-{{lists.freight}}
+            </view>
+            <view class='goods_address'>
+                可配送区域：{{lists.contentf}}
+            </view>
+        </view>
+    </view>
+    <view class='det_border'>
+        <view class="menu_box">
+            <view class='menu' ><text class='{{menuTapCurrent=="0"?"borders":""}}' data-current="0" catchtap="menuTap">商品介绍</text></view>
+            <view class='menu '><text class='{{menuTapCurrent=="1"?"borders":""}}' data-current="1" catchtap="menuTap">用户评价</text></view>
+        </view>
+
+        <view class="tab" hidden="{{menuTapCurrent!='0'}}">
+            <view class='detail_content'>
+                <!-- <image mode='widthFix' wx:for="{{piclist}}" wx:key="" src='{{item}}' bindtap="changePreview" data-src="{{item}}"></image> -->
+                <block wx:if="{{lists.content != null && lists.content != ''}}">
+                  <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+                </block>
+            </view>
+        </view>
+
+        <view class="tab" hidden="{{menuTapCurrent!='1'}}">
+            <view class='detail_contentList' wx:for="{{otherEvaluation}}" wx:for-item="other" wx:for-index="idx" wx:key="">
+                <view class='detail_header'>
+                    <view class='Other_user'>
+                        <view class='otherPic'>
+                            <image mode='aspectFit' src='{{other.avatarUrl}}'></image>
+                        </view>
+                        <view class='otherNane'>{{other.u_name}}</view>
+                    </view>
+                    <view class='score_box' >
+                        <text class='iconfont icon-xingxing' wx:for="{{other.level}}" wx:key="" wx:for-item="score"></text>
+                    </view>
+                </view>
+                <view class='detail_evaluate'>
+                    {{other.content}}
+                </view>
+                <view class='detail_picture' wx:if="{{other.pictureList != ''}}">
+                    <view class='picture_list' wx:for="{{other.pictureList}}" wx:key="" >
+                        <image mode='aspectFit'  bindtap="seePicture" data-lock="{{item}}" data-index="{{idx}}" src="{{item}}"></image>
+                    </view>
+                </view>
+                <view class='detail_time'>
+                   {{other.createdate}}
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view>
+
+<!-- 底部悬浮 -->
+<view class='footer_box'>
+    <button class='customer_service' catchtap='jump_Index'>
+        <view class='iconfont icon-shouye'></view>
+        <view class='service_text'>返回首页</view>
+    </button>
+    <button class='customer_service' open-type="contact" session-from="weapp">
+        <view class='iconfont icon-zhixun'></view>
+        <view class='service_text'>咨询客服</view>
+    </button>
+    <view class='details_btn'>
+        <view class='jion_btn'>
+            <button class='btn jion' catchtap='jionCar'>加入购物车</button>
+        </view>
+        <view class='pay_btn'>
+            <button class='btn pay' catchtap='show_modal'>立即购买</button>
+        </view>
+    </view>
+</view>
+
+<!-- show显示模态框选商品数量 -->
+<view class='modal_box {{show==true?"hidemodal":""}}' catchtouchmove='preventTouchMove' bindtap='close_modal'>
+    <view class='bottom_modal' catchtap='stop' animation="{{animation}}">
+        <view class='modal_goods'>
+            <view class='modal_top'>
+                <view class='modal_img'>
+                    <image mode='aspectFit' src='{{lists.logo}}'></image>
+                </view>
+                <view class='modal_cen'>
+                    <view class='modal_name'>{{lists.title}}</view>
+                    <view class='yuanjia'>原价:￥{{lists.cost_price}}</view>
+                    <!-- <view class='huiyuan'>会员:￥66</view> -->
+                    <view class='all_money_box'>
+                        共计金额:
+                        <text>￥{{total}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='modal_goods'>
+            <view class='modal_selsectnum'>
+                <view class='modal_title'>选择数量</view>
+                <view class='modal_num'>
+                    <text class='iconfont icon-jianhao' catchtap='jian_tianchong'></text>
+                    <text>{{num}}</text>
+                    <text class='iconfont icon-jia' catchtap='jia_tianchong'></text>
+                </view>
+            </view>
+            <view class='modal_btn' wx:if="{{carClick==2}}">
+                <view class='invite'>
+                    <button class='in_pay_btn in_pay_red' catchtap='jump_incollage'>邀请拼单</button>
+                </view>
+                <view class='payment'>
+                    <button class='in_pay_btn in_pay_blue' catchtap='jump_shopcar'>立即支付</button>
+                </view>
+            </view>
+            <view class='modal_btn center_btn' wx:if="{{carClick==1}}">
+                <view class='invite'>
+                    <button class='in_pay_btn in_pay_red' catchtap='jump_join'>加入购物车</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

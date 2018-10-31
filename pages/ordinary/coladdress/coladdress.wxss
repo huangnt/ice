@@ -1,0 +1,106 @@
+.address_box{
+    padding-top:30rpx; 
+}
+
+.address_list{
+    padding:20rpx 20rpx 20rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    margin:20rpx auto;
+    border-bottom:1rpx solid #d9d9d9;
+}
+.address_list icon{
+    margin-right:20rpx;
+}
+.address_list:first-child{
+    padding-top:0;
+}
+.address_list:last-child{
+    border-bottom:none;
+}
+.gray{
+    background: #ccc;
+    box-shadow: none;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 35rpx;
+    margin-right:20rpx;
+    flex-shrink: 0; 
+     width: 35rpx;
+    height: 35rpx;
+    border-radius: 50%;
+    color: #fff;
+}
+.address_num{
+    background: -webkit-linear-gradient(top,#4E99EE,#1171FE);
+    box-shadow: 0 5rpx 20rpx #4E99EE;
+}
+.address_contact{
+    width: 420rpx;
+    font-size: 25rpx;
+    flex-shrink: 0; 
+}
+.address_text{
+    color: #333;
+    font-weight: 600;
+}
+.address_pho{
+    color: #9d9d9d;
+    margin-top:10rpx; 
+}
+.address_pho text{
+    margin-right:20rpx; 
+}
+.default{
+    background: -webkit-linear-gradient(top,#4E99EE,#1171FE);
+    color: #fff;
+    font-size: 25rpx;
+    height:35rpx;
+    padding:0 10rpx;
+    border-radius:35rpx;
+    line-height:35rpx;
+}
+.kong{
+    width:70rpx;
+}
+.delAndmodify{
+    width: 150rpx;
+    flex-shrink: 0;
+    text-align: right;
+    color: #9d9d9d;
+    font-size:25rpx;
+}
+.del{
+    font-size: 30rpx;
+    margin-top:10rpx;
+}
+.tips{
+    text-align: center;
+    margin-top:30rpx;
+    color: #9d9d9d;
+    font-size: 30rpx; 
+}
+.addBtn{
+    width: 360rpx;
+    height: 80rpx;
+    margin: 30rpx auto;
+}
+.addBtn button{
+    width: 360rpx;
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    color: #fff;
+    background:-webkit-linear-gradient(top,#4E99EE,#1171FE);
+    border-radius: 80rpx;
+   
+}
+.btnfiex{
+    position: fixed;
+    top: 0 ;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

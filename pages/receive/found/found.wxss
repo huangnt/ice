@@ -1,0 +1,132 @@
+page{
+    background: #F2F2F2;
+}
+.found{
+    background:#fff;
+    margin-top:20rpx;
+}
+.found:last-child{
+    border: none;
+}
+.found_img{
+    margin: 0 auto;
+    background: #fff;
+    width: 710rpx;
+    height: 335rpx;
+    text-align: center;
+}
+.found image{
+    max-width: 100%;
+    max-height: 100%;
+}
+.ustext{
+    font-size: 30rpx;
+    text-align: center;
+}
+.smalltext{
+    font-size: 25rpx;
+    color: #9d9d9d;
+    padding: 20rpx 0;
+    text-align: center;
+}
+.found_title{
+    padding:15rpx 20rpx;
+    border-bottom:1rpx solid #ccc;
+    font-size:35rpx;
+}
+.goodslist{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20rpx 20rpx 20rpx;
+    margin-bottom:20rpx; 
+    border-bottom:1rpx dashed #9d9d9d;
+}
+.goodslist:last-child{
+    border-bottom:none;
+}
+.goods_img{
+    width:325rpx;
+    height:230rpx;
+}
+.goods_img image{
+    max-height: 100%;
+    max-width: 100%;
+}
+.goods_content{
+    width: 365rpx;
+    height: 230rpx;
+    overflow: hidden
+}
+.name{
+    font-size:35rpx;
+    display:-webkit-box; 
+    overflow:hidden; 
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+}
+.num{
+    font-size:28rpx;
+    color:#9d9d9d;
+    margin-top:20rpx;
+}
+.momey{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size:28rpx;
+    color:#9d9d9d;
+    margin:10rpx auto;
+
+}
+.sum text{
+    color: #FD514F;
+}
+.info_sum{
+    display:flex;
+    font-size:28rpx;
+    justify-content: space-between;
+    padding:0 20rpx;
+    color: #333;
+    margin-top:20rpx;
+}
+.info_sum text{
+    color: #FD514F;
+}
+.sumMoney{
+    position: relative;
+    color: #333;
+    font-size:28rpx;
+    padding:0 20rpx;
+}
+.sumMoney text{
+    color: #FD514F;
+}
+.info_tips{
+    font-size:28rpx;
+    padding:20rpx 20rpx;
+}
+.info_tipstext{
+    color:#9d9d9d;
+}
+.found_btn{
+    margin:40rpx auto;
+    width:710rpx;
+
+}
+.found_info{
+    padding:25rpx 0;
+}
+.call{
+    height:70rpx;
+    border-radius:0;
+    line-height:70rpx;
+    color:#fff;
+    font-size:28rpx;
+    background: #3B8BFE;
+    letter-spacing:10rpx;
+}
+.icon-dindan{
+    color: #3B8BFE;
+    font-size:28rpx;
+}

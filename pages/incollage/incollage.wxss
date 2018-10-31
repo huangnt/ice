@@ -1,0 +1,403 @@
+page {
+  background: #f2f2f2;
+}
+
+.incollage_box {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.goods_list {
+  border-bottom: 1rpx solid #d9d9d9;
+  padding: 30rpx 0;
+}
+
+.goods_list:last-child {
+  border: none;
+}
+
+.goods_content {
+  width: 710rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40rpx;
+}
+
+.goods_img {
+  width: 225rpx;
+  height: 225rpx;
+  flex-shrink: 0;
+}
+
+.goods_img image {
+  width: 100%;
+  height: 100%;
+}
+
+.notCtiy {
+  padding-left: .5em;
+  color: #f66;
+}
+
+.goods_det {
+  width: 360rpx;
+  height: 225rpx;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.goods_name {
+  font-size: 32rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.univalent {
+  font-size: 24rpx;
+  color: #9d9d9d;
+  margin: 25rpx auto 10rpx;
+}
+
+.goods_text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  bottom: 0;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 100%;
+}
+
+.goods_num {
+  color: #9d9d9d;
+}
+
+.sum_univalent {
+  color: #f93836;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+}
+
+.sum_univalent text {
+  font-size: 24rpx;
+}
+
+.other_box {
+  padding-top: 15px;
+  background: #fff;
+  margin-top: 10rpx;
+}
+
+.other_conten {
+  margin: 0 auto;
+}
+
+.other_title, .address_box {
+  display: flex;
+  align-items: center;
+}
+
+.other_title {
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.address_box {
+  justify-content: space-between;
+}
+
+.iconColor {
+  border-radius: 50%;
+  text-align: center;
+}
+
+.icon-dizhi, .icon-huabanfuben {
+  color: #4290ff;
+  font-size: 24rpx;
+}
+
+.iconTitle {
+  font-size: 32rpx;
+  margin-left: 15rpx;
+}
+
+.address_box {
+  font-size: 26rpx;
+  margin: 25rpx auto;
+  color: #9d9d9d;
+  align-items: flex-start;
+  padding: 0 20rpx;
+}
+
+.addresstext {
+  width: 470rpx;
+  flex-shrink: 0;
+}
+
+.jump_address {
+  width: 200rpx;
+  text-align: right;
+}
+
+.contact_address {
+  color: #333;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.contact_pho {
+  margin-left: 20rpx;
+}
+
+.tips_text {
+  font-size: 24rpx;
+  text-indent: 2em;
+  margin: 15rpx auto;
+  line-height: 1.2rem;
+  color: #9d9d9d;
+  padding: 0 20rpx;
+}
+
+.collage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #f2f2f2;
+  padding: 15rpx 20rpx;
+}
+
+.collage_title {
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.peo_num {
+  font-size: 26rpx;
+  padding: 0 20rpx;
+  border-left: 1rpx solid #d9d9d9;
+  border-right: 1rpx solid #d9d9d9;
+  color: #000;
+}
+
+.collage_small {
+  color: #9d9d9d;
+  font-size: 24rpx;
+}
+
+.small {
+  border: 1rpx solid #d9d9d9;
+}
+
+.icon-jia {
+  background: #eee;
+}
+
+.collage_small .iconfont {
+  padding: 0 10rpx;
+  font-size: 35rpx;
+  color: #000;
+}
+
+.collage_money {
+  color: #f93836;
+  font-size: 30rpx;
+}
+
+.footer_other {
+  margin-bottom: 110rpx;
+}
+
+.footer_box {
+  position: fixed;
+  height: 100rpx;
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-top: 1rpx solid #ccc;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show_people_num {
+  font-size: 28rpx;
+  color: #9d9d9d;
+}
+
+.foot_red {
+  color: #f93836;
+}
+
+.show_btn_money {
+  font-size: 28rpx;
+  color: #9d9d9d;
+  display: flex;
+  align-items: center;
+}
+
+.show_btn {
+  margin-left: 20rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.show_btn button {
+  height: 80rpx;
+  width: 200rpx;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #4290ff;
+  border-radius: 0;
+}
+
+.mordwidos {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: none;
+}
+
+.hidemodal {
+  display: block;
+}
+
+.bottom_modal {
+  position: absolute;
+  width: 100%;
+  height: 800rpx;
+  background: #fff;
+  border-radius: 50rpx 50rpx 0 0;
+  bottom: -800rpx;
+}
+
+.mord-title {
+  width: 700rpx;
+  display: flex;
+  margin: 20rpx auto;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.mord-title .iconfont {
+  font-weight: normal;
+}
+
+.selcop_list {
+  width: 710rpx;
+  margin: 40rpx auto;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
+.list {
+  width: 710rpx;
+  height: 195rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.list_img {
+  height: 195rpx;
+  width: 640rpx;
+  position: relative;
+  color: #fff;
+  flex-shrink: 0；;
+}
+
+.left_box {
+  position: absolute;
+  border: 1rpx solid #fff;
+  width: 335rpx;
+  height: 150rpx;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 45rpx;
+}
+
+.conten_box {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.conten_title {
+  font-size: 35rpx;
+  margin: 30rpx auto;
+}
+
+.use_date {
+  font-size: 20rpx;
+}
+
+.rigth_box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 225rpx;
+  height: 195rpx;
+}
+
+.iconbox {
+  height: 100%;
+  width: 70rpx;
+  text-align: center;
+  line-height: 195rpx;
+  flex-shrink: 0;
+}
+
+.worth {
+  text-align: center;
+  padding-top: 35rpx;
+}
+
+.fuhao {
+  font-size: 28rpx;
+}
+
+.worth_money {
+  font-size: 90rpx;
+}
+
+.arrive {
+  font-size: 25rpx;
+}
+
+.arrivetext {
+  position: absolute;
+  top: 15rpx;
+  right: 5rpx;
+  font-size: 20rpx;
+  transform: rotate(45deg);
+}

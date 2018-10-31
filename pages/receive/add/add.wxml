@@ -1,0 +1,31 @@
+<form bindsubmit="formSubmit">
+    <view class="section ">
+        <view class="section_name">收货人姓名：</view>
+        <input name="name" type='text' value=''/>
+    </view>
+    <view class="section ">
+        <view class="section_pho">电话号码：</view>
+        <input name="tel" type='number' value=''/>
+    </view>
+    <view class="section">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+            <view class="picker">
+               <text class='allAddress'>所在地区：</text><input type='text' value='{{region[0]}}，{{region[1]}}，{{region[2]}}' disabled="true" name="allAddress"></input>
+            </view>
+        </picker>
+    </view>
+    <view class="section ">
+        <view class="section_address">详细地址：</view>
+        <input name="address" type='text' value=''/>
+    </view>
+    <view class='selectmodify'>
+        <view class='iconselect'>
+            <icon type='success' size="20" color="#00E165" wx:if="{{selected==true}}" catchtap='selected'></icon>
+            <icon type='success' size="20" color="#d9d9d9" wx:else catchtap='selected' name="true"></icon>
+        </view>
+        <view class='icontext'>设置默认地址</view>
+    </view>
+    <view class="btn-area">
+        <button formType="submit">保存地址</button>
+    </view>
+</form>

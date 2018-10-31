@@ -1,0 +1,69 @@
+<view class="menu_box">
+  <view class='menu_smallbox'>
+    <text class='menu {{menuTapCurrent=="0"?"borders":""}}' data-current="0" catchtap="menuTap">全部</text>
+    <text class='menu {{menuTapCurrent=="1"?"borders":""}}' data-current="1" catchtap="menuTap">待付款</text>
+    <text class='menu {{menuTapCurrent=="2"?"borders":""}}' data-current="2" catchtap="menuTap">待拼单</text>
+    <text class='menu {{menuTapCurrent=="3"?"borders":""}}' data-current="3" catchtap="menuTap">待发货</text>
+    <text class='menu {{menuTapCurrent=="4"?"borders":""}}' data-current="4" catchtap="menuTap">已发货</text>
+  </view>
+</view>
+<view class="tab1">
+  <view class='goodsList' wx:for="{{goodsList}}" wx:key="">
+    <view class='goods_bianhao' bindtap='jump_coldetails' data-index="{{index}}">
+      <view class='goods_bianhaoNum'>订单编号：{{item.order_sn}}</view>
+      <view class='goods_schedule'>
+        <text class='state_text' wx:if="{{item.status==1}}">待付款</text>
+        <text class='state_text' wx:elif="{{item.status==2}}">待拼单</text>
+        <text class='state_text' wx:elif="{{item.status==3}}">待发货</text>
+        <text class='state_text' wx:elif="{{item.status>=4}}">已发货</text>
+        <text class='state_text' wx:elif="{{item.status==-1}}">已取消</text>
+        <text class='state_text' wx:elif="{{item.status==-2}}">已退款</text>
+        <text class='state_text' wx:else>待拼单</text>
+      </view>
+    </view>
+    <view class='goods_detailsNum'>
+      <view class=' {{item.goods.length>2?"goods_detailsheigth":""}} {{item.maxheigrh==true?"select_goods":""}}'>
+        <view class='goods_details' wx:for="{{item.goods}}" wx:key="">
+          <view class='goods_img' data-index='{{index}}'>
+            <navigator url="../../details/details?id={{item.goods_id}}">
+              <image mode='aspectFit' src='{{item.img}}' data-id='{{index}}'></image>
+            </navigator>
+          </view>
+          <view class='goods_content'>
+            <view class='goods_title'>
+              <navigator url="../../details/details?id={{item.goods_id}}">
+                <text>{{item.name}}</text>
+              </navigator>
+              <view class='color_text money'>单价：{{item.price}}</view>
+              <view class='color_text num'>数量：x{{item.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='genduo' wx:if="{{item.goods.length>2}}" bindtap="gengduo" data-index="{{index}}">{{item.maxheigrh==true?"收起":"更多"}}</view>
+    </view>
+
+    <view class='goods_operate'>
+      <view class='goods_operateText'>
+        <view class='goods_sumNum'>
+          共{{item.goods_num}}件商品
+        </view>
+        <view class='goods_payment'>
+          合计：￥
+          <text>{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='goods_operate'>
+      <view class='goods_btn'>
+        <button class='btn_share' open-type="share" wx:if="{{item.status>=2}}" data-id='{{index}}' hover-class="other-button-hover" data-status='1'>分享优惠卷</button>
+        <view class='btn  btn_share' wx:if="{{item.status==1}}" catchtap='pay' data-index="{{index}}">付款</view>
+        <view class='btn  btn_share' wx:if="{{item.status==4 || item.status==4}}" catchtap='jump_goodsComment' data-index="{{index}}">去评价</view>
+        <button class='btn btn_share' open-type="share" data-id='{{index}}' hover-class="other-button-hover" wx:if="{{item.status==2}}" data-status='2'>邀请拼单</button>
+        <view class='btn_refund btn' wx:if="{{item.status==1}}" catchtap='cancel' data-index="{{index}}">取消订单</view>
+        <button class='btn  btn_refund' bindtap='' wx:if="{{item.status>1}}" data-index="{{index}}" open-type="contact" session-from="weapp">申请售后</button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='tips'>只有这么多订单啦~</view>

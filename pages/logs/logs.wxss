@@ -1,0 +1,214 @@
+page{
+    background: -webkit-radial-gradient( #ceb18c 60%, #a67f56);
+}
+image{
+    width: 100%;
+    height: 100%;
+}
+.user_box{
+    height: 463rpx;
+    position: relative;
+}
+.user_box .bg_use{
+    z-index: 0;
+}
+.obtaingift_box{
+    width: 710rpx;
+    margin: 0 auto 25rpx;
+    background: #fff;
+    border-radius:20rpx; 
+}
+.he_box{
+    box-sizing:border-box;
+    position:absolute;
+    top:50rpx;
+    width:710rpx;
+    margin:auto;
+    left:0;
+    right:0;
+
+}
+.he_information{
+    display:flex;
+    align-items: center;
+}
+.he_img{
+    width: 100rpx;
+    height: 100rpx;
+    overflow: hidden;
+    border-radius:50%; 
+    border:3rpx solid #eee;
+}
+.he_img image{
+    width: 100%;
+    height: 100%;
+}
+.he_name{
+    font-size: 40rpx;
+    margin-left: 20rpx;
+    width: 300rpx;
+    display:-webkit-box; 
+    overflow:hidden; 
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+}
+.gift_tips{
+    text-align: center;
+    padding-bottom:35rpx;
+    border-bottom:1rpx dashed #ccc; 
+}
+.gift2box{
+    height:215rpx;
+    width:100%;
+    margin: 20rpx auto;
+}
+
+.gift_text{
+    font-size: 28rpx;
+    color: #9d9d9d;
+}
+.gift_goods{
+    border-bottom:1rpx dashed #ccc; 
+    padding:25rpx 0;
+    box-sizing: border-box;
+}
+.gift_goods_list_box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow:hidden;
+}
+.hiddenHei{
+    max-height:540rpx;
+}
+.show{
+    max-height:none;
+}
+.gift_list{
+    width: 100%;
+    padding: 0 20rpx 20rpx;
+    margin-bottom: 20rpx;
+    flex-shrink: 0;
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1rpx solid #d9d9d9;
+    box-sizing: border-box; 
+}
+.gift_list:last-child{
+    border: none;
+}
+.gift_centen{
+    width:340rpx;
+    height: 240rpx;
+    flex-shrink: 0;
+}
+.gift_img{
+    width: 240rpx;
+    height: 240rpx;
+     flex-shrink: 0;
+}
+.gift_name{
+    font-size: 32rpx;
+    display:-webkit-box; 
+    overflow:hidden; 
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+    padding:10px 0 10rpx;
+
+}
+.gift_num{
+    font-size: 26rpx;
+    color: #9d9d9d;
+    margin-bottom: 10rpx;
+}
+.gift_All{
+    font-size: 36rpx;
+    color: #ff4343;
+    margin-top:30rpx;
+}
+.gift_All text{
+    font-size: 30rpx;
+}
+.my_box{
+    padding:25rpx;
+    box-sizing: border-box;
+}
+.my_title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.iconbox{
+    width:  50rpx;
+    border-radius:15rpx;
+    text-align: center;
+    line-height: 50rpx;
+}
+.iconbox .iconfont{
+    font-size:40rpx;
+    color: #3c8bff;
+}
+.title_text{
+    font-size:32rpx;
+    margin-left:20rpx;
+    font-weight:600;
+}
+.section{
+    display: flex;
+    align-items:center;
+    padding: 20rpx  0;
+    font-size: 30rpx;
+    color: #9d9d9d;
+    border-bottom:1rpx solid #ccc; 
+}
+.section input{
+    color: #333;
+}
+.picker{
+    display: flex;
+    align-items: flex-sthar;
+}
+.picker text{
+    flex-shrink: 0;
+}
+.picker view{
+    color: #333;
+}
+.section_one{
+    display: flex;
+    align-items: flex-start;
+    font-size: 30rpx;
+    color: #9d9d9d;
+    padding: 20rpx  0;
+}
+.section_det{
+    flex-shrink: 0;
+}
+.section_one textarea{
+    color: #333;
+    height: 100rpx;
+}
+button::after{
+    border: none;
+}
+.btn-area{
+    height: 70rpx;
+}
+.btn-area button{
+    width: 550rpx;
+    height: 70rpx;
+    background: #e4464e;
+    color: #fff;
+    font-size: 30rpx;
+    border-radius:5rpx; 
+}
+.more-box-text{
+    width: 215rpx;
+    height: 50rpx;
+    margin: 0 auto;
+    border: 1rpx solid #d9d9d9;
+    font-size: 26rpx;
+    color: #9d9d9d;
+    line-height: 50rpx;
+    text-align: center;
+}

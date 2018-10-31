@@ -1,0 +1,32 @@
+<view class='address_box'>
+    <view class='address_list' wx:for="{{addresslist}}" wx:key="">
+        <view class='list_top'>
+            <view class='gray ' catchtap='select_default' data-index="{{index}}"></view>
+            <view class='address_contact' catchtap='modify' data-index="{{index}}">
+                <view class='address_name'>
+                    <text class='name'>{{item.name}}</text>
+                </view>
+                <view class='address_text'>{{item.address}}</view>
+            </view>
+            <view class='address_pho'>
+                <text class='pho'>{{item.tel}}</text>
+            </view>
+        </view>
+        <view class='list_bottom'>
+            <view class='default' wx:if="{{item.defaultsel==true}}">设为默认地址</view>
+            <view class='kong' wx:elif="{{item.defaultsel==false}}" catchtap='select_default' data-index="{{index}}" >设为默认地址</view>
+            <view class='delAndmodify'>
+                <view class='del' catchtap='modify' data-index="{{index}}">
+                 <text class='iconfont icon-bianji'></text> 编辑
+                </view>
+                <view class='del' catchtap='del' data-index="{{index}}">
+                 <text class='iconfont icon-del'></text>删除
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='tips' wx:if="{{addresslist.length==0}}"> 您还没有添加地址哦~</view>
+</view>
+<view class='addBtn {{addresslist.length<3?"btnfiex":""}}'>
+    <button catchtap="jump_addAddress">添加收货地址</button>
+</view>

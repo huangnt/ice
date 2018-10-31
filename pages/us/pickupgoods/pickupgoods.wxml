@@ -1,0 +1,90 @@
+<view class="menu_box">
+    <text class='menu1 {{menuTapCurrent=="1"?"borders":""}}' data-current="1" catchtap="menuTap">待付款</text>
+    <text class='menu2 {{menuTapCurrent=="2"?"borders":""}}' data-current="2" catchtap="menuTap">待领取</text>
+    <text class='menu1 {{menuTapCurrent=="3"?"borders":""}}' data-current="3" catchtap="menuTap">待发货</text>
+    <text class='menu2 {{menuTapCurrent=="4"?"borders":""}}' data-current="4" catchtap="menuTap">已发货</text>
+</view>
+<view class="tab1">
+    <view class='goodsList' wx:for="{{goodsList}}" wx:key="" bindtap='jump_confirm' data-index='{{index}}'>
+        <view class='goods_bianhao'>
+            <view class='goods_bianhaoNum'>订单编号：{{item.order_sn}}</view>
+            <view class='goods_schedule'>
+                <text wx:if="{{item.status==-2}}">已退款</text>
+                <text wx:if="{{item.status==-1}}">已取消</text>
+                <text wx:if="{{item.status==1}}">待付款</text>
+                <text wx:if="{{item.status==2}}">待领取</text>
+                <text wx:if="{{item.status==3}}">待发货</text>
+                <text wx:elif="{{item.status>=4}}">已完成</text>
+            </view>
+        </view>
+        <view class='goods_details'>
+            <view class='goods_list' style='width:{{item.goods.length>1?"590rpx":""}}'>
+                <view class='goods_img' wx:for="{{item.goods}}" wx:key="" data-index='{{index}}'>
+                    <navigator url="../../details/details?id={{item.goods_id}}">
+                        <image mode='aspectFit' src='{{item.img}}' data-id='{{index}}'></image>
+                    </navigator>
+                </view>
+            </view>
+            <view class='goods_title' wx:if="{{item.goods.length==1}}">
+                <navigator url="../../details/details?id={{item.goods_id}}" wx:for="{{item.goods}}" wx:key="">
+                    <text>{{item.goods_title}}</text>
+                </navigator>
+            </view>
+            <view class='goods_move ' wx:if="{{item.goods.length>3}}" catchtap="left_move" data-index="{{index}}">
+                <text class='iconfont icon-youjiantou'></text>
+            </view>
+        </view>
+        <view class='goods_operate'>
+            <view class='goods_payment'>
+                <view class='pickipTime'>提货时间：{{item.addtimes}}</view>
+            </view>
+            <view class='goods_btn'>
+                <view class='btn  btn_share' wx:if="{{ item.status==4 || item.status==5}}" catchtap='jump_goodsComment' data-index="{{index}}">去评价</view>
+                <button class='btn green'  wx:if="{{item.status==1}}" catchtap='payment' data-index='{{index}}'>付款</button>
+                <button class='btn red'   wx:if="{{item.status==1}}" catchtap='cancel' data-index='{{index}}' >取消</button>
+                <button class='btn red'   wx:if="{{item.status==2}}" catchtap='jump_pickupgoods' data-index='{{index}}' data-oid="{{item.id}}" >送给朋友</button>
+                <button class='btn green' wx:if="{{item.status>1}}" open-type="contact" session-from="weapp" data-index='{{index}}'>联系客服</button>
+
+            </view>
+        </view>
+    </view>
+</view>
+<!-- <view class="tab1" wx:if="{{menuTapCurrent=='4'}}">
+    <view class='goodsList' wx:for="{{goodsList}}" wx:key="" wx:if="{{item.state==2}}" bindtap='jump_confirm' data-index='{{index}}'>
+        <view class='goods_bianhao'>
+            <view class='goods_bianhaoNum'>订单编号：{{item.orderNum}}</view>
+            <view class='goods_schedule'>
+                <text wx:if="{{item.state==0}}">待发货</text>
+                <text wx:elif="{{item.state==2}}">已发货</text>
+            </view>
+        </view>
+        <view class='goods_details'>
+            <view class='goods_img' wx:for="{{item.goodsNum}}" wx:key="" data-index='{{index}}'>
+                <navigator url="../../details/details?id={{item.goodsid}}">
+                    <image mode='aspectFit' src='{{item.pic}}' data-id='{{index}}'></image>
+                </navigator>
+            </view>
+            <view class='goods_title' wx:if="{{item.seleNum==1}}">
+                <navigator url="../../details/details?id={{item.goodsid}}" wx:for="{{item.goodsNum}}" wx:key="">
+                     <text  >{{item.name}}</text>
+               </navigator>
+            </view>
+        </view>
+        <view class='goods_operate'>
+            <view class='goods_payment'>
+                <view class='pickipTime'>提货时间：2018-07-12 11:45</view>
+            </view>
+            <view class='goods_btn'>
+            <view class='btn  btn_share' wx:if="{{ item.state==2 && item.seeAssess==false}}" catchtap='jump_goodsComment' data-index="{{index}}">去评价</view>
+               <button class='btn green'  open-type="contact" session-from="weapp" data-index='{{index}}'>申请售后</button>
+            </view>
+        </view>
+    </view>
+</view> -->
+<view class='tips'>只有这么多订单啦~</view>
+<view class='showModal' wx:if="{{showModal==true}}">
+    <view class='Modalf'>
+        <view>请点击按钮选择要送的好友</view>
+        <button open-type="share"  catchtap='hiedModal'>赠送好友</button>
+    </view>
+</view>

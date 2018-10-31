@@ -1,0 +1,82 @@
+<form bindsubmit="formSubmit">
+    <view class='enroll_box'>
+        <view class='enroll_Title'>
+            <text class='iconfont icon-geren'></text>
+            <text class='title_text'>个人信息</text>
+        </view>
+        <view class='enroll_input'>
+            <input type='number' name="tel" placeholder='手机号'></input>
+            <text>请准确填写您本人的手机号，以便我们为您提供更好的服务</text>
+        </view>
+
+        <!-- <text class="iconfont icon-down"></text> -->
+        <view class='enroll_input'>
+            <input type='text' name="address" placeholder='您所在的城市'></input>
+            <text>告诉我们您所在的城市，以便我们为您制定个性化服务</text>
+        </view>
+        <view class='select_sex'>
+            <view class='people man {{man==true?"enroll_blueSex":""}}' catchtap='select_man'>男</view>
+            <view class='people woman {{woman==true?"enroll_blueSex":""}}' catchtap='select_woman'>女</view>
+        </view>
+    </view>
+    <view class='enroll_box'>
+        <view class='enroll_Title'>
+            <text class='iconfont icon-ziyuan '></text>
+            <text class='title_text'>生日信息</text>
+        </view>
+        <view class='enroll_input'>
+            <text>请提供准确的生日信息，以便我们在您生日时，给您赠送优惠卷，代金卷等会员专属福利。</text>
+        </view>
+        <view class='select_data'>
+            <picker mode="date" bindchange="change" value="{{data}}">
+                <view class='select'>
+                    <view class="picker">
+                        <view>年</view>
+                        <view class='select_num'>{{date[0]}}</view>
+                        <text class="iconfont icon-down"></text>
+                    </view>
+                    <view class="picker">
+                        <view>月</view>
+                        <view class='select_num'>{{date[1]}}</view>
+                        <text class="iconfont icon-down"></text>
+                    </view>
+                    <view class="picker">
+                        <view>日</view>
+                        <view class='select_num'>{{date[2]}}</view>
+                        <text class="iconfont icon-down"></text>
+                    </view>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <button class='tijiao' formType="submit" data-formNum='1' >提交信息</button>
+<!-- bindtap='moveAnimation' -->
+
+    <view class='am-modal {{show==true?"opent_box":""}}' bindtap='close'>
+        <view class='am-zhifu' catchtap='true' animation="{{animationShow}}">
+            <view class='sm_logo'>
+                <view class='logo'>
+                    <image mode='aspectFit' src='../../../img/small_logo.png'></image>
+                </view>
+                <view class='close ' catchtap='close'>
+                    <text class='iconfont icon-close'></text> </view>
+            </view>
+            <view class='zhifu_box'>
+                <view class='xuanzhong'>
+                    <image mode='aspectFit' src='../../../img/huiyuan.png'></image>
+                </view>
+                <view class='orNot'>
+                    <icon type='success' size='18' color='{{contract==true?"#ff4f4f":"#999"}}' catchtap='contractTrue'></icon>
+                    <view class='contract'>
+                        我已理解会员相关规则及权益，并同意加入会员店成为softcrush轻遇会员。
+                    </view>
+                </view>
+                <view class='pay'>
+                    <text class='pay_title'>需支付</text>
+                    <text class='pay_momey'>{{lists.money}}元</text>
+                </view>
+                <button class='pay_button' data-formNum='2' formType="submit">立即支付</button>
+            </view>
+        </view>
+    </view>
+</form>

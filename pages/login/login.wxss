@@ -1,0 +1,113 @@
+.loading_tip {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  background: #f7f7f7;
+}
+
+.title{
+  display: flex;
+  justify-content: space-between;
+  padding:0 30rpx;
+  box-sizing: border-box;
+}
+
+.title image{
+  max-width:50%;
+  position: relative;
+  z-index: 10;
+  top:20rpx;
+}
+
+.title{
+  min-height: 35%;
+  background: #65b0fc;
+  color:#fff;
+  display: flex;
+  width:100%;
+  position: relative;
+  align-items: center;
+}
+
+.title:after{
+  content:"";
+  display: block;
+  width:120%;
+  height:200rpx;
+  border-radius: 80%;
+  background: #65b0fc;
+  position: absolute;
+  bottom:-100rpx;
+  left:-10%;
+  z-index: 1;
+}
+
+.title .content{
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.title .small{
+  font-size: 16px;
+  font-weight: normal;
+  opacity: 0.8;
+  margin-top:20rpx;
+}
+
+.ok{
+  width:220rpx;
+  height: 220rpx;
+  border-radius: 50%;
+  background: #fff;
+  padding:0;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ok .iconfont{
+  font-size: 72px;
+  line-height: 1;
+  color:#36b336;
+}
+.ok image{
+    width: 80%;
+    height: 80%;
+}
+
+.cancel{
+  position: fixed;
+  bottom:5%;
+  color:#666;
+  font-size: 14px;
+  width:100%;
+  text-align: center;
+}
+.wx_shouquan{
+    z-index:999;
+    color:#333;
+    position:fixed;
+    width: 200rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    font-size: 34rpx;
+}
+.cancel text{
+  padding-bottom:12rpx;
+  border-bottom:1px solid #aaa;
+}

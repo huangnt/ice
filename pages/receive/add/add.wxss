@@ -1,0 +1,57 @@
+form{
+    margin-top: 30rpx;
+}
+.section{
+    width: 100%;
+    display: flex;
+    padding: 20rpx;
+    box-sizing: border-box;
+     font-size:35rpx;
+     font-weight: 600;
+     color: #333;
+     border-bottom:1rpx solid #ccc; 
+}
+.section input{
+    width:530rpx;
+    font-size:30rpx;
+}
+.section_name,.section_pho,.section_address,.allAddress{
+    font-size:35rpx;
+    color:#9d9d9d;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+.picker{
+    display: flex;
+}
+.btn-area{
+    position: fixed;
+    width:360rpx;
+    bottom:200rpx;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+.btn-area button{
+    background: -webkit-linear-gradient(top,#EF6B5E,#FF135B);
+    color: #fff;
+    font-size:35rpx;
+    height: 80rpx;
+    line-height: 80rpx; 
+    border-radius:80rpx; 
+}
+.selectmodify{
+    display: flex;
+    height:50rpx;
+    align-items: center;
+    margin-top:30rpx;
+    padding: 0 20rpx; 
+}
+.iconselect{
+    line-height:0;
+}
+.icontext{
+    font-size: 30rpx;
+    color: #333;
+    margin-left:20rpx; 
+}
